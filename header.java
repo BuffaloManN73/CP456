@@ -12,9 +12,11 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTabbedPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class header {
-
+	int i = 0; //for making dropdown menu
 	private JFrame frame;
 	private JTextField textField;
 
@@ -67,32 +69,20 @@ public class header {
 		frame.getContentPane().add(btnName);
 		
 		JButton btnCategory = new JButton("\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48");
-		btnCategory.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-			}
-		});
-		btnCategory.setBounds(313, 83, 137, 40);
-		frame.getContentPane().add(btnCategory);
 		
 		JButton btnAction = new JButton("Action");
-		btnAction.setEnabled(false);
-		btnAction.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
 		btnAction.setBounds(313, 120, 137, 40);
+		btnAction.setVisible(false);
 		frame.getContentPane().add(btnAction);
 		
 		JButton btnFps = new JButton("FPS");
-		btnFps.setEnabled(false);
 		btnFps.setBounds(313, 157, 137, 40);
+		btnFps.setVisible(false);
 		frame.getContentPane().add(btnFps);
 		
 		JButton btnStory = new JButton("Story");
-		btnStory.setEnabled(false);
 		btnStory.setBounds(313, 194, 137, 40);
+		btnStory.setVisible(false);
 		frame.getContentPane().add(btnStory);
 		
 		textField = new JTextField();
@@ -103,5 +93,34 @@ public class header {
 		JLabel lblNewLabel = new JLabel("\u0E04\u0E49\u0E19\u0E2B\u0E32");
 		lblNewLabel.setBounds(212, 30, 39, 14);
 		frame.getContentPane().add(lblNewLabel);
+		
+		
+		btnCategory.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(i == 0){
+					btnAction.setVisible(true);
+					btnFps.setVisible(true);
+					btnStory.setVisible(true);
+					i = 1;
+				}else {
+					btnAction.setVisible(false);
+					btnFps.setVisible(false);
+					btnStory.setVisible(false);
+					i = 0;
+				}
+				
+			}
+		});
+		btnCategory.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		btnCategory.setBounds(313, 83, 137, 40);
+		frame.getContentPane().add(btnCategory);
+		
+
+		
 	}
 }
