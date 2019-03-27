@@ -54,34 +54,34 @@ public class header {
 		lblLogo.setBounds(0, 0, 203, 72);
 		frame.getContentPane().add(lblLogo);
 		
-		JButton btnNewButton = new JButton("\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnMain = new JButton("\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01");
+		btnMain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(40, 83, 137, 40);
-		frame.getContentPane().add(btnNewButton);
+		btnMain.setBounds(40, 83, 137, 40);
+		frame.getContentPane().add(btnMain);
 		
-		JButton button = new JButton("\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15");
-		button.setBounds(176, 83, 137, 40);
-		frame.getContentPane().add(button);
+		JButton btnName = new JButton("\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15");
+		btnName.setBounds(176, 83, 137, 40);
+		frame.getContentPane().add(btnName);
 		
-		JButton button_1 = new JButton("\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48");
-		button_1.addActionListener(new ActionListener() {
+		JButton btnCategory = new JButton("\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48");
+		btnCategory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 			}
 		});
-		button_1.setBounds(313, 83, 137, 40);
-		frame.getContentPane().add(button_1);
+		btnCategory.setBounds(313, 83, 137, 40);
+		frame.getContentPane().add(btnCategory);
 		
 		JButton btnAction = new JButton("Action");
+		btnAction.setEnabled(false);
 		btnAction.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
-		btnAction.setEnabled(false);
 		btnAction.setBounds(313, 120, 137, 40);
 		frame.getContentPane().add(btnAction);
 		
