@@ -44,11 +44,7 @@ public class header {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-<<<<<<< HEAD
 		frame.setBounds(100, 100, 650, 410);
-=======
-		frame.setBounds(100, 100, 651, 412);
->>>>>>> 9fea59f40f985be3bc1014b276e5bf4d5fac1106
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -59,21 +55,12 @@ public class header {
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 18));
-<<<<<<< HEAD
 		textField.setBounds(367, 29, 257, 34);
-=======
-		textField.setBounds(358, 33, 260, 35);
->>>>>>> 9fea59f40f985be3bc1014b276e5bf4d5fac1106
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("\u0E04\u0E49\u0E19\u0E2B\u0E32");
-<<<<<<< HEAD
 		lblNewLabel.setBounds(317, 39, 40, 14);
-=======
-		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
-		lblNewLabel.setBounds(291, 19, 334, 61);
->>>>>>> 9fea59f40f985be3bc1014b276e5bf4d5fac1106
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lbmain = new JLabel("");
