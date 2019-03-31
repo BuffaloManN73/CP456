@@ -86,6 +86,7 @@ public class TestBasket {
 		lblPicture.setVerticalAlignment(SwingConstants.TOP);
 		
 		textField_Name = new JTextField();
+		textField_Name.setEditable(false);
 		textField_Name.setBounds(166, 132, 116, 22);
 		textField_Name.setColumns(10);
 		
@@ -146,8 +147,8 @@ public class TestBasket {
 	       PreparedStatement ps = null;
 	       public ResultSet find(String s){
 	           try{
-	           con = DriverManager.getConnection("game.sql","root",""); //have to connect to database
-	           ps = con.prepareStatement("select * from users where id = ?");
+	           con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
+	           ps = con.prepareStatement("select * from game where id = 1");
 	           ps.setString(1,s);
 	           rs = ps.executeQuery();
 	           }catch(Exception ex){
@@ -175,12 +176,14 @@ public class TestBasket {
 			   Function f = new Function();
 			    ResultSet rs = null;
 			    String name = "name";
-			    String type = "lname";
+			    String type = "type";
 			    String review = "review";
 			    String score = "score";
 			    String picture = "picture";
 			    
+			 
 			    rs = f.find(textField_ID.getText());
+			    System.out.print(rs);
 			    try{
 			      if(rs.next()){
 			          textField_Name.setText(rs.getString("name"));
