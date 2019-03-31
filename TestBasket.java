@@ -12,6 +12,7 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 
 public class TestBasket {
 
@@ -54,7 +55,7 @@ public class TestBasket {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 685, 483);
+		frame.setBounds(100, 100, 700, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		textField_ID = new JTextField();
@@ -134,12 +135,22 @@ public class TestBasket {
 		JLabel lblHeader = new JLabel("TestBuyGame");
 		lblHeader.setFont(new Font("Tahoma", Font.BOLD, 32));
 		lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHeader.setBounds(40, 13, 578, 63);
+		lblHeader.setBounds(40, 13, 543, 63);
 		frame.getContentPane().add(lblHeader);
 		
 		JScrollPane scrollPane_Review = new JScrollPane();
 		scrollPane_Review.setBounds(324, 213, 15, 113);
 		frame.getContentPane().add(scrollPane_Review);
+		
+		JLabel lbsearch = new JLabel("");
+		lbsearch.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21search.png")));
+		lbsearch.setBounds(82, 389, 200, 50);
+		frame.getContentPane().add(lbsearch);
+		
+		JLabel lbbasket = new JLabel("");
+		lbbasket.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/basket.png")));
+		lbbasket.setBounds(609, 13, 50, 50);
+		frame.getContentPane().add(lbbasket);
 	}
 	   public class Function{
 	       Connection con = null;
