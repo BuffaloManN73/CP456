@@ -2,19 +2,17 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import java.awt.BorderLayout;
-import java.awt.Component;
-
-import javax.swing.JPanel;
-import java.awt.Panel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTabbedPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class header {
-
+	int i = 0; //for making dropdown menu
 	private JFrame frame;
 	private JTextField textField;
 
@@ -46,62 +44,79 @@ public class header {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 650, 319);
+		frame.setBounds(100, 100, 650, 410);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblLogo = new JLabel("logo");
-		lblLogo.setBounds(0, 0, 203, 72);
+		JLabel lblLogo = new JLabel("");
+		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
+		lblLogo.setBounds(0, 0, 300, 150);
 		frame.getContentPane().add(lblLogo);
 		
-		JButton btnNewButton = new JButton("\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton.setBounds(40, 83, 137, 40);
-		frame.getContentPane().add(btnNewButton);
-		
-		JButton button = new JButton("\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15");
-		button.setBounds(176, 83, 137, 40);
-		frame.getContentPane().add(button);
-		
-		JButton button_1 = new JButton("\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48");
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-			}
-		});
-		button_1.setBounds(313, 83, 137, 40);
-		frame.getContentPane().add(button_1);
-		
-		JButton btnAction = new JButton("Action");
-		btnAction.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnAction.setEnabled(false);
-		btnAction.setBounds(313, 120, 137, 40);
-		frame.getContentPane().add(btnAction);
-		
-		JButton btnFps = new JButton("FPS");
-		btnFps.setEnabled(false);
-		btnFps.setBounds(313, 157, 137, 40);
-		frame.getContentPane().add(btnFps);
-		
-		JButton btnStory = new JButton("Story");
-		btnStory.setEnabled(false);
-		btnStory.setBounds(313, 194, 137, 40);
-		frame.getContentPane().add(btnStory);
-		
 		textField = new JTextField();
-		textField.setBounds(253, 27, 86, 20);
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		textField.setBounds(367, 29, 257, 34);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("\u0E04\u0E49\u0E19\u0E2B\u0E32");
-		lblNewLabel.setBounds(212, 30, 39, 14);
+		lblNewLabel.setBounds(317, 39, 40, 14);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lbmain = new JLabel("");
+		lbmain.setIcon(new ImageIcon("C:\\Users\\Administrator\\appbuysteam\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png"));
+		lbmain.setBounds(8, 161, 200, 50);
+		frame.getContentPane().add(lbmain);
+		
+		JLabel lbgamehit = new JLabel("");
+		lbgamehit.setIcon(new ImageIcon("C:\\Users\\Administrator\\appbuysteam\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png"));
+		lbgamehit.setBounds(218, 161, 200, 50);
+		frame.getContentPane().add(lbgamehit);
+		
+		JLabel lbstory = new JLabel("");
+		lbstory.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21story.png")));
+		lbstory.setBounds(428, 213, 200, 50);
+		lbstory.setVisible(false);
+		frame.getContentPane().add(lbstory);
+		
+		JLabel lbaction = new JLabel("");
+		lbaction.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
+		lbaction.setBounds(428, 265, 200, 50);
+		lbaction.setVisible(false);
+		frame.getContentPane().add(lbaction);
+		
+		JLabel lbsimulation = new JLabel("");
+		lbsimulation.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
+		lbsimulation.setBounds(428, 317, 200, 50);
+		lbsimulation.setVisible(false);
+		frame.getContentPane().add(lbsimulation);
+		
+
+		
+		
+		JLabel lbtype = new JLabel("");
+		lbtype.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
+		lbtype.setBounds(428, 161, 200, 50);
+		frame.getContentPane().add(lbtype);
+		lbtype.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(i == 0){
+					lbaction.setVisible(true);
+					lbstory.setVisible(true);
+					lbsimulation.setVisible(true);
+					i = 1;
+				}else {
+					lbaction.setVisible(false);
+					lbstory.setVisible(false);
+					lbsimulation.setVisible(false);
+					i = 0;
+				}
+				
+			}
+		});
+
+		
+
 	}
 }
