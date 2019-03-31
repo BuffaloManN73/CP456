@@ -86,6 +86,7 @@ public class TestBasket {
 		lblPicture.setVerticalAlignment(SwingConstants.TOP);
 		
 		textField_Name = new JTextField();
+		textField_Name.setEditable(false);
 		textField_Name.setBounds(166, 132, 116, 22);
 		textField_Name.setColumns(10);
 		
