@@ -1,7 +1,6 @@
 import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
@@ -123,11 +122,32 @@ public class TestBasket2 {
 				TestBasket testbasket = new TestBasket();
 				testbasket.setVisible(true);
 				TestBasket2.setVisible(false);
-
+		
 
 			}
 		});
-		
+		if (TestBasket.gameList.size() == 1){
+			Game1.setVisible(true);
+			chckbxGame1.setVisible(true);
+			lblName1.setText(TestBasket.gameList.get(0));
+		}else if(TestBasket.gameList.size() == 2) {
+			Game1.setVisible(true);
+			Game2.setVisible(true);
+			chckbxGame1.setVisible(true);
+			chckbxGame2.setVisible(true);
+			lblName1.setText(TestBasket.gameList.get(0));
+			lblName1.setText(TestBasket.gameList.get(1));
+		}else if(TestBasket.gameList.size() == 3) {
+			Game1.setVisible(true);
+			Game2.setVisible(true);
+			Game3.setVisible(true);
+			chckbxGame1.setVisible(true);
+			chckbxGame2.setVisible(true);
+			chckbxGame3.setVisible(true);
+			lblName1.setText(TestBasket.gameList.get(0));
+			lblName1.setText(TestBasket.gameList.get(1));
+			lblName1.setText(TestBasket.gameList.get(2));
+		}
 	}
 
 	public void setVisible(boolean b) {

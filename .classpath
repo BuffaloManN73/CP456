@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/Microsoft JDBC Driver 7.2 for SQL Server/sqljdbc_7.2/enu/mssql-jdbc-7.2.1.jre11.jar"/>
 	<classpathentry kind="lib" path="C:/Users/BOSS/Downloads/mysql-connector-java-5.1.18-bin.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

@@ -36,7 +36,7 @@ public class TestBasket {
 	private JTextField textField_Type;
 	private JTextField textField_Score;
 	private JTextArea textArea_Review;
-	ArrayList<String>gameList = new ArrayList<>();
+	static ArrayList<String>gameList = new ArrayList<>();
 	/**
 	 * Launch the application.
 	 */
