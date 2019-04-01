@@ -1,31 +1,16 @@
 import java.awt.EventQueue;
 import java.sql.*;
 import javax.swing.JFrame;
-import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import javax.swing.JScrollPane;
-import javax.swing.AbstractAction;
-import java.awt.event.ActionEvent;
-import javax.swing.Action;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.Arrays;
-import javax.swing.DropMode;
 import javax.swing.JTextArea;
-import javax.swing.JScrollBar;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.JComponent;
 
 
 public class TestBasket {
@@ -47,10 +32,10 @@ public class TestBasket {
 	       public ResultSet find(String s){
 	           try{
 	        	Class.forName("com.mysql.jdbc.Driver");
-	           con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
-	           ps = con.prepareStatement("select * from game where id = ?");
-	           ps.setString(1,s);
-	           rs = ps.executeQuery();
+	        	con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
+	        	ps = con.prepareStatement("select * from game where id = ?");
+	        	ps.setString(1,s);
+	        	rs = ps.executeQuery();
 	           }catch(Exception ex){
 	              JOptionPane.showMessageDialog(null, ex.getMessage());
 	           }
@@ -171,7 +156,6 @@ public class TestBasket {
 			    
 			 
 			    rs = f.find(textField_ID.getText());
-			    System.out.print(rs);
 			    try{
 			      if(rs.next()){
 			          textField_Name.setText(rs.getString("name"));

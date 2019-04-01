@@ -3,13 +3,32 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
+import java.sql.*;
 
 public class TestBasket2 {
-
+	public class Function{
+	       Connection con = null;
+	       ResultSet rs = null;
+	       PreparedStatement ps = null;
+	       public ResultSet find(String s){
+	           try{
+	        	Class.forName("com.mysql.jdbc.Driver");
+	        	con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
+	        	ps = con.prepareStatement("select * from game where id = ?");
+	        	ps.setString(1,s);
+	        	rs = ps.executeQuery();
+	           }catch(Exception ex){
+	              JOptionPane.showMessageDialog(null, ex.getMessage());
+	           }
+	           return rs;
+	       }
+	       
+	   }
 	private JFrame TestBasket2;
 
 	/**
@@ -26,6 +45,7 @@ public class TestBasket2 {
 				}
 			}
 		});
+		
 	}
 
 	/**
@@ -38,7 +58,7 @@ public class TestBasket2 {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(){
 		TestBasket2 = new JFrame();
 		TestBasket2.setBounds(100, 100, 700, 500);
 		TestBasket2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -129,14 +149,54 @@ public class TestBasket2 {
 		if (TestBasket.gameList.size() == 1){
 			Game1.setVisible(true);
 			chckbxGame1.setVisible(true);
-			lblName1.setText(TestBasket.gameList.get(0));
+			
+			Function f = new Function();
+		    ResultSet rs = null;
+		    String name ="name";
+		    rs = f.find(TestBasket.gameList.get(0));
+		    try{
+		      if(rs.next()){
+		          lblName1.setText(rs.getString("name"));
+		          
+		      }  else{
+		          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
+		      }
+		    }catch(Exception ex){
+		           JOptionPane.showMessageDialog(null, ex.getMessage());
+		            }
+			//lblName1.setText(TestBasket.gameList.get(0));
 		}else if(TestBasket.gameList.size() == 2) {
 			Game1.setVisible(true);
 			Game2.setVisible(true);
 			chckbxGame1.setVisible(true);
 			chckbxGame2.setVisible(true);
-			lblName1.setText(TestBasket.gameList.get(0));
-			lblName1.setText(TestBasket.gameList.get(1));
+			Function f = new Function();
+		    ResultSet rs = null;
+		    String name ="name";
+		    rs = f.find(TestBasket.gameList.get(0));
+		    try{
+		      if(rs.next()){
+		          lblName1.setText(rs.getString("name"));
+		          
+		      }  else{
+		          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
+		      }
+		    }catch(Exception ex){
+		           JOptionPane.showMessageDialog(null, ex.getMessage());
+		            }
+		    rs = f.find(TestBasket.gameList.get(1));
+		    try{
+		      if(rs.next()){
+		          lblName2.setText(rs.getString("name"));
+		          
+		      }  else{
+		          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
+		      }
+		    }catch(Exception ex){
+		           JOptionPane.showMessageDialog(null, ex.getMessage());
+		            }
+			//lblName1.setText(TestBasket.gameList.get(0));
+			//lblName1.setText(TestBasket.gameList.get(1));
 		}else if(TestBasket.gameList.size() == 3) {
 			Game1.setVisible(true);
 			Game2.setVisible(true);
@@ -144,9 +204,49 @@ public class TestBasket2 {
 			chckbxGame1.setVisible(true);
 			chckbxGame2.setVisible(true);
 			chckbxGame3.setVisible(true);
+			
+			Function f = new Function();
+		    ResultSet rs = null;
+		    String name ="name";
+		    rs = f.find(TestBasket.gameList.get(0));
+		    try{
+		      if(rs.next()){
+		          lblName1.setText(rs.getString("name"));
+		          
+		      }  else{
+		          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
+		      }
+		    }catch(Exception ex){
+		           JOptionPane.showMessageDialog(null, ex.getMessage());
+		            }
+		    rs = f.find(TestBasket.gameList.get(1));
+		    try{
+		      if(rs.next()){
+		          lblName2.setText(rs.getString("name"));
+		          
+		      }  else{
+		          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
+		      }
+		    }catch(Exception ex){
+		           JOptionPane.showMessageDialog(null, ex.getMessage());
+		    }
+		    rs = f.find(TestBasket.gameList.get(2));
+		    try{
+		      if(rs.next()){
+		          lblName3.setText(rs.getString("name"));
+		          
+		      }  else{
+		          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
+		      }
+		    }catch(Exception ex){
+		           JOptionPane.showMessageDialog(null, ex.getMessage());
+		    }
+		           
+			/*
 			lblName1.setText(TestBasket.gameList.get(0));
 			lblName1.setText(TestBasket.gameList.get(1));
 			lblName1.setText(TestBasket.gameList.get(2));
+			*/
 		}
 	}
 
