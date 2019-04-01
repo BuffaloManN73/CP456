@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 public class TestBasket2 {
 
-	private JFrame frame;
+	private JFrame TestBasket2;
 
 	/**
 	 * Launch the application.
@@ -18,7 +18,7 @@ public class TestBasket2 {
 			public void run() {
 				try {
 					TestBasket2 window = new TestBasket2();
-					window.frame.setVisible(true);
+					window.TestBasket2.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,24 +37,28 @@ public class TestBasket2 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 700, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		TestBasket2 = new JFrame();
+		TestBasket2.setBounds(100, 100, 700, 500);
+		TestBasket2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		TestBasket2.getContentPane().setLayout(null);
 		
 		JLabel lbremove = new JLabel("");
 		lbremove.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
 		lbremove.setBounds(408, 345, 200, 50);
-		frame.getContentPane().add(lbremove);
+		TestBasket2.getContentPane().add(lbremove);
 		
 		JLabel lbback = new JLabel("");
 		lbback.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
 		lbback.setBounds(10, 400, 200, 50);
-		frame.getContentPane().add(lbback);
+		TestBasket2.getContentPane().add(lbback);
 		lbback.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				TestBasket testbasket = new TestBasket();
+				testbasket.setVisible(true);
+				TestBasket2.setVisible(false);
+
+
 			}
 		});
 		

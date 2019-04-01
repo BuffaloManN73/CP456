@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 
 public class TestBasket {
 
-	private JFrame frame;
+	private JFrame TestBasket;
 	private JTextField textField_ID;
 	private JTextField textField_Name;
 	private JTextField textField_Type;
@@ -34,7 +34,7 @@ public class TestBasket {
 			public void run() {
 				try {
 					TestBasket window = new TestBasket();
-					window.frame.setVisible(true);
+					window.TestBasket.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -54,9 +54,9 @@ public class TestBasket {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 700, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		TestBasket = new JFrame();
+		TestBasket.setBounds(100, 100, 700, 500);
+		TestBasket.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		textField_ID = new JTextField();
 		textField_ID.setBounds(166, 86, 116, 22);
@@ -117,40 +117,40 @@ public class TestBasket {
 		textField_Review.setEditable(false);
 		textField_Review.setBounds(166, 212, 173, 114);
 		textField_Review.setColumns(10);
-		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(lblNewLabel);
-		frame.getContentPane().add(lblName);
-		frame.getContentPane().add(lblType);
-		frame.getContentPane().add(lblReview);
-		frame.getContentPane().add(textField_ID);
-		frame.getContentPane().add(textField_Review);
-		frame.getContentPane().add(textField_Name);
-		frame.getContentPane().add(textField_Type);
-		frame.getContentPane().add(lblPicture);
-		frame.getContentPane().add(lblScore);
-		frame.getContentPane().add(textField_Score);
-		frame.getContentPane().add(btnSearch);
-		frame.getContentPane().add(btnCheckout);
+		TestBasket.getContentPane().setLayout(null);
+		TestBasket.getContentPane().add(lblNewLabel);
+		TestBasket.getContentPane().add(lblName);
+		TestBasket.getContentPane().add(lblType);
+		TestBasket.getContentPane().add(lblReview);
+		TestBasket.getContentPane().add(textField_ID);
+		TestBasket.getContentPane().add(textField_Review);
+		TestBasket.getContentPane().add(textField_Name);
+		TestBasket.getContentPane().add(textField_Type);
+		TestBasket.getContentPane().add(lblPicture);
+		TestBasket.getContentPane().add(lblScore);
+		TestBasket.getContentPane().add(textField_Score);
+		TestBasket.getContentPane().add(btnSearch);
+		TestBasket.getContentPane().add(btnCheckout);
 		
 		JLabel lblHeader = new JLabel("TestBuyGame");
 		lblHeader.setFont(new Font("Tahoma", Font.BOLD, 32));
 		lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHeader.setBounds(40, 13, 543, 63);
-		frame.getContentPane().add(lblHeader);
+		TestBasket.getContentPane().add(lblHeader);
 		
 		JScrollPane scrollPane_Review = new JScrollPane();
 		scrollPane_Review.setBounds(324, 213, 15, 113);
-		frame.getContentPane().add(scrollPane_Review);
+		TestBasket.getContentPane().add(scrollPane_Review);
 		
 		JLabel lbsearch = new JLabel("");
 		lbsearch.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21search.png")));
 		lbsearch.setBounds(82, 389, 200, 50);
-		frame.getContentPane().add(lbsearch);
+		TestBasket.getContentPane().add(lbsearch);
 		
 		JLabel lbbasket = new JLabel("");
 		lbbasket.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/basket.png")));
 		lbbasket.setBounds(609, 13, 50, 50);
-		frame.getContentPane().add(lbbasket);
+		TestBasket.getContentPane().add(lbbasket);
 	}
 	   public class Function{
 	       Connection con = null;
@@ -211,4 +211,9 @@ public class TestBasket {
 			    
 		}
 	}
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		TestBasket.setVisible(b);
+	}
+
 }
