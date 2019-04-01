@@ -24,9 +24,6 @@ public class TestBasket {
 	private JTextField textField_Type;
 	private JTextField textField_Score;
 	private JTextField textField_Review;
-	private final Action action = new SwingAction();
-	private final Action action_1 = new SwingAction_1();
-
 	/**
 	 * Launch the application.
 	 */
@@ -196,24 +193,6 @@ public class TestBasket {
 		TestBasket.getContentPane().add(lbbasket);
 	}
 
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "Checkout");
-			putValue(SHORT_DESCRIPTION, "Reset");
-		}
-		public void actionPerformed(ActionEvent e) {
-			System.exit(0);
-		}
-	}
-	private class SwingAction_1 extends AbstractAction {
-		public SwingAction_1() {
-			putValue(NAME, "Search");
-			putValue(SHORT_DESCRIPTION, "Find game");
-		}
-		public void actionPerformed(ActionEvent e) {
-			    
-		}
-	}
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		TestBasket.setVisible(b);
