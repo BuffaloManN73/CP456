@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import javax.swing.JScrollPane;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
@@ -20,6 +22,11 @@ import java.util.Arrays;
 import javax.swing.DropMode;
 import javax.swing.JTextArea;
 import javax.swing.JScrollBar;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.JComponent;
+
 
 public class TestBasket {
 
@@ -89,9 +96,8 @@ public class TestBasket {
 		JLabel lblNewLabel = new JLabel("ID");
 		lblNewLabel.setBounds(40, 89, 56, 16);
 		
-		JLabel lblPicture = new JLabel("picture");
+		JLabel lblPicture = new JLabel("picture",SwingConstants.CENTER);
 		lblPicture.setBounds(351, 89, 267, 274);
-		lblPicture.setVerticalAlignment(SwingConstants.TOP);
 		
 		textField_Name = new JTextField();
 		textField_Name.setEditable(false);
@@ -172,7 +178,8 @@ public class TestBasket {
 			          textField_Type.setText(rs.getString("type"));
 			          textArea_Review.setText(rs.getString("review"));
 			          textField_Score.setText(rs.getString("score"));
-			          //lblPicture.setText(rs.getString("picture")); i didn't why i doesn't work lul (BuffMan 31-3-19)
+			          lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));//lblPicture.setText(rs.getString("picture"))
+			          
 			      }  else{
 			          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 			      }

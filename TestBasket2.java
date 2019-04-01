@@ -58,6 +58,7 @@ public class TestBasket2 {
 		Game1.setBounds(12, 59, 200, 276);
 		Game1.setVisible(false);
 		TestBasket2.getContentPane().add(Game1);
+		Game1.setLayout(null);
 		
 		JPanel Game2 = new JPanel();
 		Game2.setBounds(246, 59, 200, 276);
