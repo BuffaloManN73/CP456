@@ -15,6 +15,8 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TestBasket {
 
@@ -24,6 +26,7 @@ public class TestBasket {
 	private JTextField textField_Type;
 	private JTextField textField_Score;
 	private JTextField textField_Review;
+	ArrayList<String>gameList = new ArrayList<>();
 	/**
 	 * Launch the application.
 	 */
@@ -145,8 +148,8 @@ public class TestBasket {
 		TestBasket.getContentPane().add(label);
 		TestBasket.getContentPane().add(scrollPane_Review);
 		
-		JLabel lbsearch = new JLabel("");
-		lbsearch.addMouseListener(new MouseAdapter() {
+		JLabel lblSearch = new JLabel("");
+		lblSearch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				Function f = new Function();
@@ -175,12 +178,12 @@ public class TestBasket {
 			            }
 			}
 		});
-		lbsearch.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21search.png")));
-		lbsearch.setBounds(383, 376, 200, 50);
-		TestBasket.getContentPane().add(lbsearch);
+		lblSearch.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21search.png")));
+		lblSearch.setBounds(150, 379, 200, 50);
+		TestBasket.getContentPane().add(lblSearch);
 		
-		JLabel lbbasket = new JLabel("");
-		lbbasket.addMouseListener(new MouseAdapter() {
+		JLabel lblBasket = new JLabel("");
+		lblBasket.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				TestBasket2 testbasket = new TestBasket2();
@@ -188,14 +191,31 @@ public class TestBasket {
 				TestBasket.setVisible(false);
 			}
 		});
-		lbbasket.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/basket.png")));
-		lbbasket.setBounds(609, 13, 50, 50);
-		TestBasket.getContentPane().add(lbbasket);
+		lblBasket.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/basket.png")));
+		lblBasket.setBounds(609, 13, 50, 50);
+		TestBasket.getContentPane().add(lblBasket);
+		
+		JLabel lblAdd = new JLabel("AddGame");
+		lblAdd.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				if (Integer.parseInt(textField_ID.getText()) < 10 &&Integer.parseInt(textField_ID.getText()) >0 && gameList.size() < 3){
+						gameList.add(textField_ID.getText());
+						JOptionPane.showMessageDialog(null, "Added!!");
+						//System.out.print(gameList);
+				}else {
+						JOptionPane.showMessageDialog(null, "Can't do that!!");
+				}
+					
+			}
+		});
+		lblAdd.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21add.png")));
+		lblAdd.setBounds(417, 376, 200, 53);
+		TestBasket.getContentPane().add(lblAdd);
 	}
 
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		TestBasket.setVisible(b);
 	}
-
 }
