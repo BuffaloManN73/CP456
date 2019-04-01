@@ -17,6 +17,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.DropMode;
+import javax.swing.JTextArea;
+import javax.swing.JScrollBar;
 
 public class TestBasket {
 
@@ -25,7 +28,7 @@ public class TestBasket {
 	private JTextField textField_Name;
 	private JTextField textField_Type;
 	private JTextField textField_Score;
-	private JTextField textField_Review;
+	private JTextArea textArea_Review;
 	ArrayList<String>gameList = new ArrayList<>();
 	/**
 	 * Launch the application.
@@ -36,8 +39,9 @@ public class TestBasket {
 	       PreparedStatement ps = null;
 	       public ResultSet find(String s){
 	           try{
+	        	Class.forName("com.mysql.jdbc.Driver");
 	           con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
-	           ps = con.prepareStatement("select * from game where id = 1");
+	           ps = con.prepareStatement("select * from game where id = ?");
 	           ps.setString(1,s);
 	           rs = ps.executeQuery();
 	           }catch(Exception ex){
@@ -113,20 +117,24 @@ public class TestBasket {
 		JLabel lblScore = new JLabel("Score");
 		lblScore.setBounds(40, 347, 56, 16);
 		
-		JLabel lblReview = new JLabel("Type");
-		lblReview.setBounds(40, 213, 38, 16);
+		JLabel lblReview = new JLabel("Review");
+		lblReview.setBounds(40, 213, 71, 16);
 		
-		textField_Review = new JTextField();
-		textField_Review.setEditable(false);
-		textField_Review.setBounds(166, 212, 173, 114);
-		textField_Review.setColumns(10);
+		textArea_Review = new JTextArea();
+		textArea_Review.setEditable(false);
+		textArea_Review.setBounds(166, 212, 173, 114);
+		textArea_Review.setColumns(10);
+		textArea_Review.setLineWrap(true);
+		textArea_Review.setWrapStyleWord(true);
+		
+		
 		TestBasket.getContentPane().setLayout(null);
 		TestBasket.getContentPane().add(lblNewLabel);
 		TestBasket.getContentPane().add(lblName);
 		TestBasket.getContentPane().add(lblType);
 		TestBasket.getContentPane().add(lblReview);
 		TestBasket.getContentPane().add(textField_ID);
-		TestBasket.getContentPane().add(textField_Review);
+		TestBasket.getContentPane().add(textArea_Review);
 		TestBasket.getContentPane().add(textField_Name);
 		TestBasket.getContentPane().add(textField_Type);
 		TestBasket.getContentPane().add(lblPicture);
@@ -139,14 +147,9 @@ public class TestBasket {
 		lblHeader.setBounds(40, 13, 543, 63);
 		TestBasket.getContentPane().add(lblHeader);
 		
-		JScrollPane scrollPane_Review = new JScrollPane();
-		scrollPane_Review.setBounds(324, 213, 15, 113);
-		TestBasket.getContentPane().add(scrollPane_Review);
-		
 		JLabel label = new JLabel("\u0E15\u0E30\u0E01\u0E23\u0E49\u0E32");
 		label.setBounds(550, 33, 84, 43);
 		TestBasket.getContentPane().add(label);
-		TestBasket.getContentPane().add(scrollPane_Review);
 		
 		JLabel lblSearch = new JLabel("");
 		lblSearch.addMouseListener(new MouseAdapter() {
@@ -167,7 +170,7 @@ public class TestBasket {
 			      if(rs.next()){
 			          textField_Name.setText(rs.getString("name"));
 			          textField_Type.setText(rs.getString("type"));
-			          textField_Review.setText(rs.getString("review"));
+			          textArea_Review.setText(rs.getString("review"));
 			          textField_Score.setText(rs.getString("score"));
 			          //lblPicture.setText(rs.getString("picture")); i didn't why i doesn't work lul (BuffMan 31-3-19)
 			      }  else{
@@ -212,6 +215,7 @@ public class TestBasket {
 		lblAdd.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21add.png")));
 		lblAdd.setBounds(417, 376, 200, 53);
 		TestBasket.getContentPane().add(lblAdd);
+		
 	}
 
 	public void setVisible(boolean b) {
