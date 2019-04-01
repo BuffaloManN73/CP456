@@ -12,10 +12,13 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class TestBasket {
 
-	private JFrame frame;
+	private JFrame TestBasket;
 	private JTextField textField_ID;
 	private JTextField textField_Name;
 	private JTextField textField_Type;
@@ -27,13 +30,30 @@ public class TestBasket {
 	/**
 	 * Launch the application.
 	 */
+	 public class Function{
+	       Connection con = null;
+	       ResultSet rs = null;
+	       PreparedStatement ps = null;
+	       public ResultSet find(String s){
+	           try{
+	           con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
+	           ps = con.prepareStatement("select * from game where id = 1");
+	           ps.setString(1,s);
+	           rs = ps.executeQuery();
+	           }catch(Exception ex){
+	              JOptionPane.showMessageDialog(null, ex.getMessage());
+	           }
+	           return rs;
+	       }
+	       
+	   }
 	public static void main(String[] args) {
 			
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					TestBasket window = new TestBasket();
-					window.frame.setVisible(true);
+					window.TestBasket.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -53,9 +73,10 @@ public class TestBasket {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 700, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		TestBasket = new JFrame();
+		TestBasket.setBounds(100, 100, 700, 500);
+		TestBasket.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		
 		textField_ID = new JTextField();
 		textField_ID.setBounds(166, 86, 116, 22);
@@ -63,23 +84,6 @@ public class TestBasket {
 		
 		JLabel lblNewLabel = new JLabel("ID");
 		lblNewLabel.setBounds(40, 89, 56, 16);
-		
-		JButton btnSearch = new JButton("Search");
-		btnSearch.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnSearch.setAction(action_1);
-		btnSearch.setBounds(309, 379, 97, 25);
-		
-		JButton btnCheckout = new JButton("Checkout");
-		btnCheckout.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			
-			}
-		});
-		btnCheckout.setAction(action);
-		btnCheckout.setBounds(457, 379, 97, 25);
 		
 		JLabel lblPicture = new JLabel("picture");
 		lblPicture.setBounds(351, 89, 267, 274);
@@ -116,68 +120,39 @@ public class TestBasket {
 		textField_Review.setEditable(false);
 		textField_Review.setBounds(166, 212, 173, 114);
 		textField_Review.setColumns(10);
-		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(lblNewLabel);
-		frame.getContentPane().add(lblName);
-		frame.getContentPane().add(lblType);
-		frame.getContentPane().add(lblReview);
-		frame.getContentPane().add(textField_ID);
-		frame.getContentPane().add(textField_Review);
-		frame.getContentPane().add(textField_Name);
-		frame.getContentPane().add(textField_Type);
-		frame.getContentPane().add(lblPicture);
-		frame.getContentPane().add(lblScore);
-		frame.getContentPane().add(textField_Score);
-		frame.getContentPane().add(btnSearch);
-		frame.getContentPane().add(btnCheckout);
+		TestBasket.getContentPane().setLayout(null);
+		TestBasket.getContentPane().add(lblNewLabel);
+		TestBasket.getContentPane().add(lblName);
+		TestBasket.getContentPane().add(lblType);
+		TestBasket.getContentPane().add(lblReview);
+		TestBasket.getContentPane().add(textField_ID);
+		TestBasket.getContentPane().add(textField_Review);
+		TestBasket.getContentPane().add(textField_Name);
+		TestBasket.getContentPane().add(textField_Type);
+		TestBasket.getContentPane().add(lblPicture);
+		TestBasket.getContentPane().add(lblScore);
+		TestBasket.getContentPane().add(textField_Score);
 		
 		JLabel lblHeader = new JLabel("TestBuyGame");
 		lblHeader.setFont(new Font("Tahoma", Font.BOLD, 32));
 		lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHeader.setBounds(40, 13, 578, 63);
-		frame.getContentPane().add(lblHeader);
+		lblHeader.setBounds(40, 13, 543, 63);
+		TestBasket.getContentPane().add(lblHeader);
 		
 		JScrollPane scrollPane_Review = new JScrollPane();
 		scrollPane_Review.setBounds(324, 213, 15, 113);
-		frame.getContentPane().add(scrollPane_Review);
+		TestBasket.getContentPane().add(scrollPane_Review);
 		
 		JLabel label = new JLabel("\u0E15\u0E30\u0E01\u0E23\u0E49\u0E32");
 		label.setBounds(550, 33, 84, 43);
-		frame.getContentPane().add(label);
-	}
-	   public class Function{
-	       Connection con = null;
-	       ResultSet rs = null;
-	       PreparedStatement ps = null;
-	       public ResultSet find(String s){
-	           try{
-	           con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
-	           ps = con.prepareStatement("select * from game where id = 1");
-	           ps.setString(1,s);
-	           rs = ps.executeQuery();
-	           }catch(Exception ex){
-	              JOptionPane.showMessageDialog(null, ex.getMessage());
-	           }
-	           return rs;
-	       }
-	       
-	   }
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "Checkout");
-			putValue(SHORT_DESCRIPTION, "Reset");
-		}
-		public void actionPerformed(ActionEvent e) {
-			System.exit(0);
-		}
-	}
-	private class SwingAction_1 extends AbstractAction {
-		public SwingAction_1() {
-			putValue(NAME, "Search");
-			putValue(SHORT_DESCRIPTION, "Find game");
-		}
-		public void actionPerformed(ActionEvent e) {
-			   Function f = new Function();
+		TestBasket.getContentPane().add(label);
+		TestBasket.getContentPane().add(scrollPane_Review);
+		
+		JLabel lbsearch = new JLabel("");
+		lbsearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				Function f = new Function();
 			    ResultSet rs = null;
 			    String name = "name";
 			    String type = "type";
@@ -201,7 +176,47 @@ public class TestBasket {
 			    }catch(Exception ex){
 			           JOptionPane.showMessageDialog(null, ex.getMessage());
 			            }
+			}
+		});
+		lbsearch.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21search.png")));
+		lbsearch.setBounds(383, 376, 200, 50);
+		TestBasket.getContentPane().add(lbsearch);
+		
+		JLabel lbbasket = new JLabel("");
+		lbbasket.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				TestBasket2 testbasket = new TestBasket2();
+				testbasket.setVisible(true);
+				TestBasket.setVisible(false);
+			}
+		});
+		lbbasket.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/basket.png")));
+		lbbasket.setBounds(609, 13, 50, 50);
+		TestBasket.getContentPane().add(lbbasket);
+	}
+
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "Checkout");
+			putValue(SHORT_DESCRIPTION, "Reset");
+		}
+		public void actionPerformed(ActionEvent e) {
+			System.exit(0);
+		}
+	}
+	private class SwingAction_1 extends AbstractAction {
+		public SwingAction_1() {
+			putValue(NAME, "Search");
+			putValue(SHORT_DESCRIPTION, "Find game");
+		}
+		public void actionPerformed(ActionEvent e) {
 			    
 		}
 	}
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		TestBasket.setVisible(b);
+	}
+
 }
