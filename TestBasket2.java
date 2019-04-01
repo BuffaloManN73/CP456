@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
+import javax.swing.SwingConstants;
 
 public class TestBasket2 {
 
@@ -60,15 +61,47 @@ public class TestBasket2 {
 		TestBasket2.getContentPane().add(Game1);
 		Game1.setLayout(null);
 		
+		JLabel lblPicture1 = new JLabel("Picture");
+		lblPicture1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPicture1.setBounds(22, 13, 150, 200);
+		Game1.add(lblPicture1);
+		
+		JLabel lblName1 = new JLabel("Name");
+		lblName1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblName1.setBounds(22, 238, 150, 25);
+		Game1.add(lblName1);
+		
 		JPanel Game2 = new JPanel();
 		Game2.setBounds(246, 59, 200, 276);
 		Game2.setVisible(false);
 		TestBasket2.getContentPane().add(Game2);
+		Game2.setLayout(null);
+		
+		JLabel lblPicture2 = new JLabel("Picture");
+		lblPicture2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPicture2.setBounds(23, 13, 150, 200);
+		Game2.add(lblPicture2);
+		
+		JLabel lblName2 = new JLabel("Name");
+		lblName2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblName2.setBounds(23, 238, 150, 25);
+		Game2.add(lblName2);
 		
 		JPanel Game3 = new JPanel();
 		Game3.setBounds(470, 59, 200, 276);
 		Game3.setVisible(false);
 		TestBasket2.getContentPane().add(Game3);
+		Game3.setLayout(null);
+		
+		JLabel lblPicture3 = new JLabel("Picture");
+		lblPicture3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPicture3.setBounds(27, 13, 150, 200);
+		Game3.add(lblPicture3);
+		
+		JLabel lblName3 = new JLabel("Name");
+		lblName3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblName3.setBounds(27, 238, 150, 25);
+		Game3.add(lblName3);
 		
 		JCheckBox chckbxGame1 = new JCheckBox("Select this");
 		chckbxGame1.setBounds(56, 344, 111, 25);
