@@ -54,7 +54,7 @@ public class TestBasket {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 685, 483);
+		frame.setBounds(100, 100, 700, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		textField_ID = new JTextField();
@@ -140,6 +140,10 @@ public class TestBasket {
 		JScrollPane scrollPane_Review = new JScrollPane();
 		scrollPane_Review.setBounds(324, 213, 15, 113);
 		frame.getContentPane().add(scrollPane_Review);
+		
+		JLabel label = new JLabel("\u0E15\u0E30\u0E01\u0E23\u0E49\u0E32");
+		label.setBounds(550, 33, 84, 43);
+		frame.getContentPane().add(label);
 	}
 	   public class Function{
 	       Connection con = null;
