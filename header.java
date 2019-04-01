@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -13,7 +12,7 @@ import java.awt.Font;
 
 public class header {
 	int i = 0; //for making dropdown menu
-	private JFrame frame;
+	private JFrame frmAppreviewgame;
 	private JTextField textField;
 
 	/**
@@ -24,7 +23,7 @@ public class header {
 			public void run() {
 				try {
 					header window = new header();
-					window.frame.setVisible(true);
+					window.frmAppreviewgame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -38,67 +37,67 @@ public class header {
 	public header() {
 		initialize();
 	}
-
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 750, 300);
-		frame.setBounds(100, 100, 650, 410);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmAppreviewgame = new JFrame();
+		frmAppreviewgame.setTitle("AppReviewGame");
+		frmAppreviewgame.setBounds(100, 100, 750, 300);
+		frmAppreviewgame.setBounds(100, 100, 650, 410);
+		frmAppreviewgame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmAppreviewgame.getContentPane().setLayout(null);
 		
 		JLabel lblLogo = new JLabel("");
 		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
 		lblLogo.setBounds(0, 0, 300, 150);
-		frame.getContentPane().add(lblLogo);
+		frmAppreviewgame.getContentPane().add(lblLogo);
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		textField.setBounds(367, 29, 257, 34);
-		frame.getContentPane().add(textField);
+		textField.setBounds(354, 29, 260, 35);
+		frmAppreviewgame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("\u0E04\u0E49\u0E19\u0E2B\u0E32");
-		lblNewLabel.setBounds(317, 39, 40, 14);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(287, 24, 340, 45);
+		frmAppreviewgame.getContentPane().add(lblNewLabel);
 		
 		JLabel lbmain = new JLabel("");
-		lbmain.setIcon(new ImageIcon("C:\\Users\\Administrator\\appbuysteam\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png"));
+		lbmain.setIcon(new ImageIcon("C:\\Users\\Administrator\\appreviewgame\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png"));
 		lbmain.setBounds(8, 161, 200, 50);
-		frame.getContentPane().add(lbmain);
+		frmAppreviewgame.getContentPane().add(lbmain);
 		
 		JLabel lbgamehit = new JLabel("");
-		lbgamehit.setIcon(new ImageIcon("C:\\Users\\Administrator\\appbuysteam\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png"));
+		lbgamehit.setIcon(new ImageIcon("C:\\Users\\Administrator\\appreviewgame\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png"));
 		lbgamehit.setBounds(218, 161, 200, 50);
-		frame.getContentPane().add(lbgamehit);
+		frmAppreviewgame.getContentPane().add(lbgamehit);
 		
 		JLabel lbstory = new JLabel("");
 		lbstory.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21story.png")));
 		lbstory.setBounds(428, 213, 200, 50);
 		lbstory.setVisible(false);
-		frame.getContentPane().add(lbstory);
+		frmAppreviewgame.getContentPane().add(lbstory);
 		
 		JLabel lbaction = new JLabel("");
 		lbaction.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
 		lbaction.setBounds(428, 265, 200, 50);
 		lbaction.setVisible(false);
-		frame.getContentPane().add(lbaction);
+		frmAppreviewgame.getContentPane().add(lbaction);
 		
 		JLabel lbsimulation = new JLabel("");
 		lbsimulation.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
 		lbsimulation.setBounds(428, 317, 200, 50);
 		lbsimulation.setVisible(false);
-		frame.getContentPane().add(lbsimulation);
-		
-
-		
+		frmAppreviewgame.getContentPane().add(lbsimulation);
 		
 		JLabel lbtype = new JLabel("");
 		lbtype.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
 		lbtype.setBounds(428, 161, 200, 50);
-		frame.getContentPane().add(lbtype);
+		frmAppreviewgame.getContentPane().add(lbtype);
 		lbtype.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -113,11 +112,7 @@ public class header {
 					lbsimulation.setVisible(false);
 					i = 0;
 				}
-				
 			}
 		});
-
-		
-
 	}
 }
