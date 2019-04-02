@@ -10,7 +10,7 @@ import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
 import java.sql.*;
 
-public class TestBasket2 {
+public class TestBasket3 {
 	public class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
@@ -29,7 +29,7 @@ public class TestBasket2 {
 	       }
 	       
 	   }
-	private JFrame TestBasket2;
+	private JFrame TestBasket3;
 
 	/**
 	 * Launch the application.
@@ -38,8 +38,8 @@ public class TestBasket2 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TestBasket2 window = new TestBasket2();
-					window.TestBasket2.setVisible(true);
+					TestBasket3 window = new TestBasket3();
+					window.TestBasket3.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -51,7 +51,7 @@ public class TestBasket2 {
 	/**
 	 * Create the application.
 	 */
-	public TestBasket2() {
+	public TestBasket3() {
 		initialize();
 	}
 
@@ -61,37 +61,37 @@ public class TestBasket2 {
 	
 	public void refresh()
 	{
-		TestBasket3 testbasket = new TestBasket3();
+		TestBasket2 testbasket = new TestBasket2();
 		testbasket.setVisible(true);
-		TestBasket2.setVisible(false);
+		TestBasket3.setVisible(false);
 	}
 	
 	private void initialize(){
-		TestBasket2 = new JFrame();
-		TestBasket2.setBounds(100, 100, 700, 500);
-		TestBasket2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		TestBasket2.getContentPane().setLayout(null);
+		TestBasket3 = new JFrame();
+		TestBasket3.setBounds(100, 100, 700, 500);
+		TestBasket3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		TestBasket3.getContentPane().setLayout(null);
 		
 		JCheckBox chckbxGame1 = new JCheckBox("Select this");
 		chckbxGame1.setBounds(56, 344, 111, 25);
 		chckbxGame1.setVisible(false);
-		TestBasket2.getContentPane().add(chckbxGame1);
+		TestBasket3.getContentPane().add(chckbxGame1);
 		
 		JCheckBox chckbxGame2 = new JCheckBox("Select this");
 		chckbxGame2.setBounds(300, 344, 111, 25);
 		chckbxGame2.setVisible(false);
-		TestBasket2.getContentPane().add(chckbxGame2);
+		TestBasket3.getContentPane().add(chckbxGame2);
 		
 		JCheckBox chckbxGame3 = new JCheckBox("Select this");
 		chckbxGame3.setBounds(519, 344, 111, 25);
 		chckbxGame3.setVisible(false);
-		TestBasket2.getContentPane().add(chckbxGame3);
+		TestBasket3.getContentPane().add(chckbxGame3);
 		
 		
 		JPanel Game1 = new JPanel();
 		Game1.setBounds(12, 59, 200, 276);
 		Game1.setVisible(false);
-		TestBasket2.getContentPane().add(Game1);
+		TestBasket3.getContentPane().add(Game1);
 		Game1.setLayout(null);
 	
 		JLabel lblPicture1 = new JLabel("Picture");
@@ -107,7 +107,7 @@ public class TestBasket2 {
 		JPanel Game2 = new JPanel();
 		Game2.setBounds(246, 59, 200, 276);
 		Game2.setVisible(false);
-		TestBasket2.getContentPane().add(Game2);
+		TestBasket3.getContentPane().add(Game2);
 		Game2.setLayout(null);
 		
 		JLabel lblPicture2 = new JLabel("Picture");
@@ -123,7 +123,7 @@ public class TestBasket2 {
 		JPanel Game3 = new JPanel();
 		Game3.setBounds(470, 59, 200, 276);
 		Game3.setVisible(false);
-		TestBasket2.getContentPane().add(Game3);
+		TestBasket3.getContentPane().add(Game3);
 		Game3.setLayout(null);
 		
 		JLabel lblPicture3 = new JLabel("Picture");
@@ -138,21 +138,21 @@ public class TestBasket2 {
 		
 		JLabel lbremove = new JLabel("");
 		lbremove.setBounds(377, 391, 200, 50);
-		lbremove.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
-		TestBasket2.getContentPane().add(lbremove);
+		lbremove.setIcon(new ImageIcon(TestBasket3.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
+		TestBasket3.getContentPane().add(lbremove);
 		
 		
 		JLabel lbback = new JLabel("");
 		lbback.setBounds(125, 391, 200, 50);
-		lbback.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
-		TestBasket2.getContentPane().add(lbback);
+		lbback.setIcon(new ImageIcon(TestBasket3.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
+		TestBasket3.getContentPane().add(lbback);
 		
 		lbback.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				TestBasket testbasket = new TestBasket();
 				testbasket.setVisible(true);
-				TestBasket2.setVisible(false);
+				TestBasket3.setVisible(false);
 			}
 		});
 		
@@ -525,7 +525,7 @@ public class TestBasket2 {
 
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
-		TestBasket2.setVisible(b);
+		TestBasket3.setVisible(b);
 		
 	}
 }
