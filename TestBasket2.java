@@ -58,6 +58,13 @@ public class TestBasket2 {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	
+	public void refresh()
+	{
+		
+		
+	}
+	
 	private void initialize(){
 		TestBasket2 = new JFrame();
 		TestBasket2.setBounds(100, 100, 700, 500);
@@ -85,7 +92,7 @@ public class TestBasket2 {
 		Game1.setVisible(false);
 		TestBasket2.getContentPane().add(Game1);
 		Game1.setLayout(null);
-		
+	
 		JLabel lblPicture1 = new JLabel("Picture");
 		lblPicture1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPicture1.setBounds(22, 13, 150, 200);
@@ -133,6 +140,7 @@ public class TestBasket2 {
 		lbremove.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
 		TestBasket2.getContentPane().add(lbremove);
 		
+		
 		JLabel lbback = new JLabel("");
 		lbback.setBounds(125, 391, 200, 50);
 		lbback.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
@@ -146,6 +154,9 @@ public class TestBasket2 {
 				TestBasket2.setVisible(false);
 			}
 		});
+		
+
+		
 		if (TestBasket.gameList.size() == 1){
 			Game1.setVisible(true);
 			chckbxGame1.setVisible(true);
@@ -193,6 +204,31 @@ public class TestBasket2 {
 	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
 	            break;
 		    }
+		  //11111111111111111
+		    lbremove.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					if (chckbxGame1.isSelected() && TestBasket.gameList.size()>=1) {
+						JOptionPane.showMessageDialog(null, "Delete1!!");
+						TestBasket.gameList.remove(0);
+				        
+
+					}
+					if (chckbxGame2.isSelected()&& TestBasket.gameList.size()>=2 ) {
+						JOptionPane.showMessageDialog(null, "Delete2!!");
+						TestBasket.gameList.remove(1);
+
+						
+					}
+					if (chckbxGame3.isSelected()&& TestBasket.gameList.size()==3 ) {
+						JOptionPane.showMessageDialog(null, "Delete3!!");
+						TestBasket.gameList.remove(2);
+
+					}
+					
+					
+				}
+			});
 			//lblName1.setText(TestBasket.gameList.get(0));
 		}else if(TestBasket.gameList.size() == 2) {
 			Game1.setVisible(true);
@@ -284,7 +320,33 @@ public class TestBasket2 {
 	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
 	            break;
 	      }
-			//lblName1.setText(TestBasket.gameList.get(0));
+		    //222222222222222222222
+		    lbremove.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					if (chckbxGame1.isSelected() && TestBasket.gameList.size()>=1) {
+						JOptionPane.showMessageDialog(null, "Delete2.111!!");
+						TestBasket.gameList.remove(0);
+						lblPicture1.setIcon(lblPicture1.getIcon());
+						
+					}
+					if (chckbxGame2.isSelected()&& TestBasket.gameList.size()>=2 ) {
+						JOptionPane.showMessageDialog(null, "Delete2.2!!");
+						TestBasket.gameList.remove(1);
+						Game1.updateUI();
+						
+					}
+					if (chckbxGame3.isSelected()&& TestBasket.gameList.size()==3 ) {
+						JOptionPane.showMessageDialog(null, "Delete3!!");
+						TestBasket.gameList.remove(2);
+						Game1.updateUI();
+						
+					}
+					
+					
+				}
+			});
+			
 			//lblName1.setText(TestBasket.gameList.get(1));
 		}else if(TestBasket.gameList.size() == 3) {
 			Game1.setVisible(true);
@@ -420,10 +482,36 @@ public class TestBasket2 {
 	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
 	            break;
 		    }
+		  //333333333333333333
 		    lbremove.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					/*
+					if (chckbxGame1.isSelected() && TestBasket.gameList.size()>=1) {
+						JOptionPane.showMessageDialog(null, "Delete1!!");
+						TestBasket.gameList.remove(0);
+
+					}
+					if (chckbxGame2.isSelected()&& TestBasket.gameList.size()>=2 ) {
+						JOptionPane.showMessageDialog(null, "Delete2!!");
+						TestBasket.gameList.remove(1);
+
+						
+					}
+					if (chckbxGame3.isSelected()&& TestBasket.gameList.size()==3 ) {
+						JOptionPane.showMessageDialog(null, "Delete3!!");
+						TestBasket.gameList.remove(2);
+
+					}
+					
+					
+				}
+			});
+			/*
+			lbremove.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					
+					
 					if (chckbxGame1.isSelected() && TestBasket.gameList.size()>1) {
 						TestBasket.gameList.remove(0);
 					}
@@ -433,11 +521,11 @@ public class TestBasket2 {
 					if (chckbxGame3.isSelected()&& TestBasket.gameList.size()>3 ) {
 						TestBasket.gameList.remove(2);
 					}
-					*/
+					
 				}
 			});
 		           
-			/*
+			
 			lblName1.setText(TestBasket.gameList.get(0));
 			lblName1.setText(TestBasket.gameList.get(1));
 			lblName1.setText(TestBasket.gameList.get(2));
