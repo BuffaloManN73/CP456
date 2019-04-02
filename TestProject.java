@@ -14,9 +14,9 @@ class TestProject {
 	}
 	void testSQL() {
 		//checking SQL can connect to Program by looking at I
-		/*
-		 * assertEquals("Farcry5",textField_Name.setText(rs.getString("name")));
-		 */
+
+		 //assertEquals("Farcry5",TestBasket.textField_Name.setText(TestBasket.rs.getString("name")));
+		 
 	}
 	void testChange() {
 		//checking it can change to TestBasket2
@@ -25,9 +25,11 @@ class TestProject {
 		assertEquals(TestBasket2.setVisible(true),);
 		*/
 	}
-	void testVisible() {
+	void testInvisible() {
 		//checking Testbasket 2 doesn't show text if Array is empty
 	}
-	
+	void testVisible() {
+		//checking TestBasket2 show content when Array has element
+	}
 
 }
