@@ -64,15 +64,21 @@ public class TestBasket2 {
 		TestBasket2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		TestBasket2.getContentPane().setLayout(null);
 		
-		JLabel lbremove = new JLabel("");
-		lbremove.setBounds(377, 391, 200, 50);
-		lbremove.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
-		TestBasket2.getContentPane().add(lbremove);
+		JCheckBox chckbxGame1 = new JCheckBox("Select this");
+		chckbxGame1.setBounds(56, 344, 111, 25);
+		chckbxGame1.setVisible(false);
+		TestBasket2.getContentPane().add(chckbxGame1);
 		
-		JLabel lbback = new JLabel("");
-		lbback.setBounds(125, 391, 200, 50);
-		lbback.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
-		TestBasket2.getContentPane().add(lbback);
+		JCheckBox chckbxGame2 = new JCheckBox("Select this");
+		chckbxGame2.setBounds(300, 344, 111, 25);
+		chckbxGame2.setVisible(false);
+		TestBasket2.getContentPane().add(chckbxGame2);
+		
+		JCheckBox chckbxGame3 = new JCheckBox("Select this");
+		chckbxGame3.setBounds(519, 344, 111, 25);
+		chckbxGame3.setVisible(false);
+		TestBasket2.getContentPane().add(chckbxGame3);
+		
 		
 		JPanel Game1 = new JPanel();
 		Game1.setBounds(12, 59, 200, 276);
@@ -122,28 +128,22 @@ public class TestBasket2 {
 		lblName3.setBounds(27, 238, 150, 25);
 		Game3.add(lblName3);
 		
-		JCheckBox chckbxGame1 = new JCheckBox("Select this");
-		chckbxGame1.setBounds(56, 344, 111, 25);
-		chckbxGame1.setVisible(false);
-		TestBasket2.getContentPane().add(chckbxGame1);
+		JLabel lbremove = new JLabel("");
+		lbremove.setBounds(377, 391, 200, 50);
+		lbremove.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
+		TestBasket2.getContentPane().add(lbremove);
 		
-		JCheckBox chckbxGame2 = new JCheckBox("Select this");
-		chckbxGame2.setBounds(300, 344, 111, 25);
-		chckbxGame2.setVisible(false);
-		TestBasket2.getContentPane().add(chckbxGame2);
+		JLabel lbback = new JLabel("");
+		lbback.setBounds(125, 391, 200, 50);
+		lbback.setIcon(new ImageIcon(TestBasket2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
+		TestBasket2.getContentPane().add(lbback);
 		
-		JCheckBox chckbxGame3 = new JCheckBox("Select this");
-		chckbxGame3.setBounds(519, 344, 111, 25);
-		chckbxGame3.setVisible(false);
-		TestBasket2.getContentPane().add(chckbxGame3);
 		lbback.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				TestBasket testbasket = new TestBasket();
 				testbasket.setVisible(true);
 				TestBasket2.setVisible(false);
-		
-
 			}
 		});
 		if (TestBasket.gameList.size() == 1){
@@ -420,6 +420,22 @@ public class TestBasket2 {
 	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
 	            break;
 		    }
+		    lbremove.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					/*
+					if (chckbxGame1.isSelected() && TestBasket.gameList.size()>1) {
+						TestBasket.gameList.remove(0);
+					}
+					if (chckbxGame2.isSelected()&& TestBasket.gameList.size()>2 ) {
+						TestBasket.gameList.remove(1);
+					}
+					if (chckbxGame3.isSelected()&& TestBasket.gameList.size()>3 ) {
+						TestBasket.gameList.remove(2);
+					}
+					*/
+				}
+			});
 		           
 			/*
 			lblName1.setText(TestBasket.gameList.get(0));
