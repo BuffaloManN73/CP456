@@ -164,6 +164,35 @@ public class TestBasket2 {
 		    }catch(Exception ex){
 		           JOptionPane.showMessageDialog(null, ex.getMessage());
 		            }
+		    switch(TestBasket.gameList.get(0).charAt(0)) {
+	         case '1' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+	            break;
+	         case '2' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+	            break;
+	         case '3' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+	            break;
+	         case '4' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+	            break;
+	         case '5' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+	            break;
+	         case '6' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+	            break;
+	         case '7' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+	            break;
+	         case '8' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+	            break;
+	         case '9' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+	            break;
+		    }
 			//lblName1.setText(TestBasket.gameList.get(0));
 		}else if(TestBasket.gameList.size() == 2) {
 			Game1.setVisible(true);
@@ -195,6 +224,66 @@ public class TestBasket2 {
 		    }catch(Exception ex){
 		           JOptionPane.showMessageDialog(null, ex.getMessage());
 		            }
+		    
+		    switch(TestBasket.gameList.get(0).charAt(0)) {
+	         case '1' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+	            break;
+	         case '2' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+	            break;
+	         case '3' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+	            break;
+	         case '4' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+	            break;
+	         case '5' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+	            break;
+	         case '6' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+	            break;
+	         case '7' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+	            break;
+	         case '8' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+	            break;
+	         case '9' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+	            break;
+		    }
+		    
+		    switch(TestBasket.gameList.get(1).charAt(0)) {
+	         case '1' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+	            break;
+	         case '2' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+	            break;
+	         case '3' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+	            break;
+	         case '4' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+	            break;
+	         case '5' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+	            break;
+	         case '6' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+	            break;
+	         case '7' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+	            break;
+	         case '8' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+	            break;
+	         case '9' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+	            break;
+	      }
 			//lblName1.setText(TestBasket.gameList.get(0));
 			//lblName1.setText(TestBasket.gameList.get(1));
 		}else if(TestBasket.gameList.size() == 3) {
@@ -240,6 +329,96 @@ public class TestBasket2 {
 		      }
 		    }catch(Exception ex){
 		           JOptionPane.showMessageDialog(null, ex.getMessage());
+		    }
+		    
+		    switch(TestBasket.gameList.get(0).charAt(0)) {
+	         case '1' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+	            break;
+	         case '2' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+	            break;
+	         case '3' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+	            break;
+	         case '4' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+	            break;
+	         case '5' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+	            break;
+	         case '6' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+	            break;
+	         case '7' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+	            break;
+	         case '8' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+	            break;
+	         case '9' :
+	        	 lblPicture1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+	            break;
+		    }
+		    
+		    switch(TestBasket.gameList.get(1).charAt(0)) {
+	         case '1' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+	            break;
+	         case '2' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+	            break;
+	         case '3' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+	            break;
+	         case '4' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+	            break;
+	         case '5' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+	            break;
+	         case '6' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+	            break;
+	         case '7' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+	            break;
+	         case '8' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+	            break;
+	         case '9' :
+	        	 lblPicture2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+	            break;
+	      }
+		    
+		    switch(TestBasket.gameList.get(2).charAt(0)) {
+	         case '1' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+	            break;
+	         case '2' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+	            break;
+	         case '3' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+	            break;
+	         case '4' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+	            break;
+	         case '5' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+	            break;
+	         case '6' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+	            break;
+	         case '7' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+	            break;
+	         case '8' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+	            break;
+	         case '9' :
+	        	 lblPicture3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+	            break;
 		    }
 		           
 			/*

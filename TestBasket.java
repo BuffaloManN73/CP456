@@ -15,12 +15,12 @@ import javax.swing.JTextArea;
 
 public class TestBasket {
 
-	private JFrame TestBasket;
-	private JTextField textField_ID;
-	private JTextField textField_Name;
-	private JTextField textField_Type;
-	private JTextField textField_Score;
-	private JTextArea textArea_Review;
+	JFrame TestBasket;
+	JTextField textField_ID;
+	JTextField textField_Name;
+	JTextField textField_Type;
+	JTextField textField_Score;
+	JTextArea textArea_Review;
 	static ArrayList<String>gameList = new ArrayList<>();
 	/**
 	 * Launch the application.
@@ -68,7 +68,7 @@ public class TestBasket {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		TestBasket = new JFrame();
 		TestBasket.setBounds(100, 100, 700, 500);
 		TestBasket.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -162,7 +162,7 @@ public class TestBasket {
 			          textField_Type.setText(rs.getString("type"));
 			          textArea_Review.setText(rs.getString("review"));
 			          textField_Score.setText(rs.getString("score"));
-			          lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));//lblPicture.setText(rs.getString("picture"))
+			          //lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));//lblPicture.setText(rs.getString("picture"))
 			          
 			      }  else{
 			          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
@@ -170,6 +170,35 @@ public class TestBasket {
 			    }catch(Exception ex){
 			           JOptionPane.showMessageDialog(null, ex.getMessage());
 			            }
+			    switch(textField_ID.getText().charAt(0)) {
+		         case '1' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+		            break;
+		         case '2' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+		            break;
+		         case '3' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+		            break;
+		         case '4' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+		            break;
+		         case '5' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+		            break;
+		         case '6' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+		            break;
+		         case '7' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+		            break;
+		         case '8' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+		            break;
+		         case '9' :
+		        	 lblPicture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+		            break;
+		      }
 			}
 		});
 		lblSearch.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21search.png")));
