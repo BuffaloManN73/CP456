@@ -22,6 +22,7 @@ public class TestBasket {
 	JTextField textField_Score;
 	JTextArea textArea_Review;
 	static ArrayList<String>gameList = new ArrayList<>();
+	static ArrayList<String>name = new ArrayList<>();
 	/**
 	 * Launch the application.
 	 */
@@ -58,6 +59,36 @@ public class TestBasket {
 		
 	}
 
+	public static void addgameid(String i){
+		gameList.add(i);
+		
+	}
+	
+	public static void removegameid(int i){
+		
+		gameList.remove(i);
+	}
+	
+	/*public void finegamename() throws Exception{
+		
+		Function f = new Function();
+		ResultSet rs = null;
+		rs = f.find(gameList.get(0));
+		String gname = rs.getString("name");
+		name.add(gname);
+		
+	}*/
+	
+	/*public static String checkgamename(String i) {
+		
+		String gamename = name.get(0);
+		
+	}*/
+	
+
+	
+
+	
 	/**
 	 * Create the application.
 	 */
