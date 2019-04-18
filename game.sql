@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2019 at 05:09 AM
+-- Generation Time: Apr 18, 2019 at 07:37 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -42,7 +42,7 @@ CREATE TABLE `game` (
 --
 
 INSERT INTO `game` (`id`, `type`, `name`, `picture`, `review`, `score`) VALUES
-(1, 'action', 'Farcry5', '1', 'Far Cry 5 is also a less restrictive playground than its predecessors. After a short introduction, you can go to every corner of its world map and take on most of its content. You can go where you want and do what you want. You can hike to a remote spot in the woods and go fishing. You can ignore the game’s story and simply blow shit up.', '4.5'),
+(1, 'Action', 'Farcry5', '1', 'Far Cry 5 is also a less restrictive playground than its predecessors. After a short introduction, you can go to every corner of its world map and take on most of its content. You can go where you want and do what you want. You can hike to a remote spot in the woods and go fishing. You can ignore the game’s story and simply blow shit up.', '4.5'),
 (2, 'Action', 'Sekiro™: Shadows Die Twice', '2', 'Sekiro is a video game that delights the player with robust, stuffed worlds to explore and strategize, and then forces them to forget all of that to conquer singular, terrible enemies. It pushes and pulls, attacks and releases. It is not connected to the loose cosmology of games in developer FromSoftware’s celebrated oeuvre, but echoes old game design and a nihilistic view of the world. You can analyze it all you want, and probably implant whatever larger meaning you feel you can staple onto it, just like other FromSoft games. Sekiro will laugh.', '4.8'),
 (3, 'Action', 'Grand Theft Auto V', '3', 'For me, Grand Theft Auto V’s extraordinary scope is summed up in two favourite moments. One is from a mid-game mission in which I flew a plane into another plane, fought the crew, hijacked the thing, and then parachuted out and watched it crash into the sea to escape death at the hands of incoming military fighter jets. Another time, whilst driving around in an off-road buggy, I got distracted by something that looked like a path up one of the San Andreas mountains. Turns out it was a path, and I spent 15 minutes following to the summit, where I nearly ran over a group of hikers. “Typical!” one of them yelled at me, as if he nearly gets run over by a rogue ATV on top of a mountain every time he goes on a hike.', '5'),
 (4, 'rpg', 'Stardew Valley', '4', 'On the surface, Stardew Valley is a game about farming, but there are more adventures awaiting curious players beyond cultivating a rich and bountiful garden. From mining and fishing to making friends and falling in love, Stardew Valley\'s Pelican Town is stuffed with rewarding opportunities. As modern day woes give way to pressing matters on the farm and within your newfound community, Stardew Valley\'s meditative activities often lead to personal reflection in the real world. It’s a game that tugs at your curiousity as often as it does your heart.', '4.7'),
@@ -52,6 +52,23 @@ INSERT INTO `game` (`id`, `type`, `name`, `picture`, `review`, `score`) VALUES
 (8, 'simulation', 'Train Simulator 2019', '8', 'Developed by Dovetail Games, the series\'s new game is not so much of a great deal of innovation, but there is exciting new content for the players who follow the series closely. At the end of the day, I hear you say “this is just a train, it goes forward and backward”. But it is necessary to say that a great craft lies beneath being a mechanic. Even though today\'s machines are gradually delivered to the hands of artificial intelligence, Train Simulator 2019 teaches you more than how to use trains. Besides the mechanical and digital parts of the trains, you can be sure that you will learn much information you never knew in this game.', '1.5'),
 (9, 'simulation', 'Hand Simulator', '9', 'Hand Simulator is the third game in a series of life simulation releases created by HFM Games. As you might have guessed from the title, this game allows you to assume the role of your own hands!  If it sounds weird, it’s because it is. But we think that in the most positive way possible since this release is incredibly addictive and funny!', '3.5');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `game1` int(11) NOT NULL,
+  `game2` int(11) NOT NULL,
+  `game3` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -60,6 +77,12 @@ INSERT INTO `game` (`id`, `type`, `name`, `picture`, `review`, `score`) VALUES
 -- Indexes for table `game`
 --
 ALTER TABLE `game`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 COMMIT;
 
