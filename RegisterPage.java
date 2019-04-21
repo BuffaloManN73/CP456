@@ -17,6 +17,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class RegisterPage {
 
@@ -132,7 +134,9 @@ public class RegisterPage {
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				LoginPage logpage = new LoginPage();
+				logpage.setVisible(true);
+				frmAppbuysteam.setVisible(false);
 			}
 		});
 		btnBack.setBounds(178, 487, 97, 25);
@@ -162,6 +166,9 @@ public class RegisterPage {
 					pst.execute();
 					
 					JOptionPane.showMessageDialog(null, "Register Success");
+					LoginPage logpage = new LoginPage();
+					logpage.setVisible(true);
+					frmAppbuysteam.setVisible(false);
 				}
 
 			
@@ -180,5 +187,10 @@ public class RegisterPage {
 		
 		btnConfirm.setBounds(364, 487, 97, 25);
 		frmAppbuysteam.getContentPane().add(btnConfirm);
+		
+	}
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		frmAppbuysteam.setVisible(b);
 	}
 }

@@ -149,10 +149,15 @@ public class LoginPage {
 		frmLogin.getContentPane().add(btnLogin);
 		
 		JButton btnRegister = new JButton("Register");
-		btnRegister.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnRegister.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				RegisterPage regpage = new RegisterPage();
+				regpage.setVisible(true);
+				frmLogin.setVisible(false);
 			}
 		});
+
 		btnRegister.setBounds(336, 388, 146, 34);
 		frmLogin.getContentPane().add(btnRegister);
 	}
