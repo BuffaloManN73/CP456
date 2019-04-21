@@ -43,7 +43,7 @@ public class GamePage{
 	           }
 	           return rs;
 	       }
-	       
+	      
 	   }
 	    
 	private JFrame GamePage;
@@ -203,7 +203,8 @@ public class GamePage{
 		btnBack.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MainPage.setVisible(true);
+				MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
 				GamePage.setVisible(false);
 			}
 		});

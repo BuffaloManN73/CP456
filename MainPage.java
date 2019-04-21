@@ -34,10 +34,10 @@ public class MainPage {
 	           }
 	           return rs;
 	       }
-	       
+	      
 	   }
 
-	private JFrame frame;
+	private JFrame MainPage;
 
 	/**
 	 * Launch the application.
@@ -47,7 +47,7 @@ public class MainPage {
 			public void run() {
 				try {
 					MainPage window = new MainPage();
-					window.frame.setVisible(true);
+					window.MainPage.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -67,18 +67,18 @@ public class MainPage {
 	 */
 	static String ID;
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 650, 1000);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		MainPage = new JFrame();
+		MainPage.setBounds(100, 100, 650, 1000);
+		MainPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		MainPage.getContentPane().setLayout(null);
 		JPanel Head_panel = new JPanel();
 		Head_panel.setBounds(0, -33, 632, 410);
-		frame.getContentPane().add(Head_panel);
+		MainPage.getContentPane().add(Head_panel);
 		Head_panel.setOpaque(false);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(0, 221, 632, 750);
-		frame.getContentPane().add(scrollPane);
+		MainPage.getContentPane().add(scrollPane);
 		scrollPane.setPreferredSize(new Dimension(600,700));
 		
 		JPanel Main_panel = new JPanel();
@@ -442,7 +442,7 @@ public class MainPage {
 		
 	}
 
-	public static void setVisible(boolean b) {
+	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		MainPage.setVisible(b);
 	}
