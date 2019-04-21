@@ -162,8 +162,8 @@ public class BasketPage2 {
 		btn_Confirm.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				GamePage.gameList.clear();
-				MainPage.setVisible(true);
+				MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
 				BasketPage.setVisible(false);
 			}
 		});
@@ -173,7 +173,8 @@ public class BasketPage2 {
 		lbback.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MainPage.setVisible(true);
+				MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
 				BasketPage.setVisible(false);
 			}
 		});
