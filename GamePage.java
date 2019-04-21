@@ -73,5 +73,13 @@ public class GamePage {
 		lbl_Name.setBounds(100, 495, 548, 50);
 		Game_panel.add(lbl_Name);
 		
+		JLabel lbl_Review_Head = new JLabel("Review");
+		lbl_Review_Head.setBounds(12, 558, 56, 16);
+		Game_panel.add(lbl_Review_Head);
+		
+		JLabel lbl_Review_Detail = new JLabel("Detail\r\n");
+		lbl_Review_Detail.setBounds(100, 580, 56, 16);
+		Game_panel.add(lbl_Review_Detail);
+		
 	}
 }
