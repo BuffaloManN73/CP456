@@ -129,8 +129,8 @@ public class LoginPage {
 					    		  JOptionPane.showMessageDialog(null, "Login Success");
 					    		  System.out.print(username[0]);
 					    		  
-									header header = new header();
-									header.setVisible(true);
+									MainPage mainpage = new MainPage();
+									mainpage.setVisible(true);
 									frmLogin.setVisible(false);
 					    		  
 					    	  }else {
