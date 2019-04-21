@@ -1,11 +1,14 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -71,10 +74,62 @@ public class MainPage {
 		MainPage.setBounds(100, 100, 650, 1000);
 		MainPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		MainPage.getContentPane().setLayout(null);
+		
 		JPanel Head_panel = new JPanel();
 		Head_panel.setBounds(0, -33, 632, 410);
 		MainPage.getContentPane().add(Head_panel);
 		Head_panel.setOpaque(false);
+		Head_panel.setLayout(null);
+		
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(288, 64, 340, 45);
+		Head_panel.add(lblNewLabel);
+		
+		JLabel lbmain = new JLabel("");
+		lbmain.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
+		lbmain.setBounds(8, 161, 200, 50);
+		Head_panel.add(lbmain);
+		
+		JLabel lbgamehit = new JLabel("");
+		lbgamehit.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png")));
+		lbgamehit.setBounds(218, 161, 200, 50);
+		Head_panel.add(lbgamehit);
+		
+		JLabel lbstory = new JLabel("");
+		lbstory.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21story.png")));
+		lbstory.setBounds(428, 213, 200, 50);
+		lbstory.setVisible(false);
+		Head_panel.add(lbstory);
+		
+		JLabel lbaction = new JLabel("");
+		lbaction.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
+		lbaction.setBounds(428, 265, 200, 50);
+		lbaction.setVisible(false);
+		Head_panel.add(lbaction);
+		
+		JLabel lbsimulation = new JLabel("");
+		lbsimulation.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
+		lbsimulation.setBounds(428, 317, 200, 50);
+		lbsimulation.setVisible(false);
+		Head_panel.add(lbsimulation);
+		
+		JLabel lbtype = new JLabel("");
+		lbtype.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
+		lbtype.setBounds(428, 161, 200, 50);
+		Head_panel.add(lbtype);
+		
+		JButton button = new JButton("");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				BasketPage basketpage = new BasketPage();
+				basketpage.setVisible(true);
+				MainPage.setVisible(false);
+			}
+		});
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(0, 221, 632, 750);

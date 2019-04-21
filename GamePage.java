@@ -91,28 +91,19 @@ public class GamePage{
 		Head_panel.setLayout(null);
 		Head_panel.setOpaque(false);
 		
-		/*
-		 * copypaste from header.java 21/04/19 
-		 * 
-		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
-		lblLogo.setBounds(0, 0, 300, 150);
-		Head_panel.add(lblLogo);
-		
-		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(287, 24, 340, 45);
+		lblNewLabel.setBounds(288, 64, 340, 45);
 		Head_panel.add(lblNewLabel);
 		
 		JLabel lbmain = new JLabel("");
-		lbmain.setIcon(new ImageIcon("C:\\Users\\Administrator\\appreviewgame\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png"));
+		lbmain.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
 		lbmain.setBounds(8, 161, 200, 50);
 		Head_panel.add(lbmain);
 		
 		JLabel lbgamehit = new JLabel("");
-		lbgamehit.setIcon(new ImageIcon("C:\\Users\\Administrator\\appreviewgame\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png"));
+		lbgamehit.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png")));
 		lbgamehit.setBounds(218, 161, 200, 50);
 		Head_panel.add(lbgamehit);
 		
@@ -138,6 +129,36 @@ public class GamePage{
 		lbtype.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
 		lbtype.setBounds(428, 161, 200, 50);
 		Head_panel.add(lbtype);
+		
+		JButton button = new JButton("");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				BasketPage basketpage = new BasketPage();
+				basketpage.setVisible(true);
+				GamePage.setVisible(false);
+			}
+		});
+		button.setIcon(new ImageIcon(header.class.getResource("/Picture/basket.png")));
+		button.setBounds(537, 3, 83, 59);
+		Head_panel.add(button);
+		
+		JLabel lblUser = new JLabel("User :");
+		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblUser.setBounds(312, 23, 72, 33);
+		Head_panel.add(lblUser);
+		
+		
+		
+		
+		JLabel lblname = new JLabel("New label");
+		lblname.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblname.setBounds(376, 27, 149, 25);
+		Head_panel.add(lblname);
+		lblname.setText(LoginPage.username[0]);
+		
+		
+		
 		lbtype.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -155,7 +176,6 @@ public class GamePage{
 				}
 			}
 		});
-		*/
 		
 		
 		JPanel Game_panel = new JPanel();
