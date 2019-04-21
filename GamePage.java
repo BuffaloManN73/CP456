@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -23,6 +25,8 @@ import javax.swing.UIManager;
 import java.awt.Color;
 
 public class GamePage{
+	static ArrayList<String>gameList = new ArrayList<>();
+	
 	public class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
@@ -82,7 +86,7 @@ public class GamePage{
 		
 		JPanel Head_panel = new JPanel();
 		Head_panel.setBackground(Color.WHITE);
-		Head_panel.setBounds(12, 13, 608, 410);
+		Head_panel.setBounds(0, 0, 634, 410);
 		GamePage.getContentPane().add(Head_panel);
 		Head_panel.setLayout(null);
 		Head_panel.setOpaque(false);
@@ -160,7 +164,7 @@ public class GamePage{
 		
 		JScrollPane scrollPane = new JScrollPane(Game_panel);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(12, 236, 608, 714);
+		scrollPane.setBounds(0, 236, 634, 714);
 		GamePage.getContentPane().add(scrollPane);
 		scrollPane.setPreferredSize(new Dimension(600,700));
 		
@@ -196,15 +200,34 @@ public class GamePage{
 		btnBack.setFont(new Font("Tahoma", Font.BOLD, 18));
 		
 		btnBack.setBounds(100, 800, 150, 50);
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MainPage.setVisible(true);
+				GamePage.setVisible(false);
+			}
+		});
 		Game_panel.add(btnBack);
-		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnAdd.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (gameList.size() < 3){
+					gameList.add(MainPage.ID);
+					JOptionPane.showMessageDialog(null, "Added!!");
+					//System.out.print(gameList);
+			}else {
+					JOptionPane.showMessageDialog(null, "Can't do that!!");
+			}
+			}
+		});
 		
+		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnAdd.setBounds(350, 800, 150, 50);
 		Game_panel.add(btnAdd);
 		
 		Function f = new Function();
 	    ResultSet rs = null;
-	    //rs = f.find("1"); get ID from MainPage
+	    rs = f.find(MainPage.ID);
 	    try{
 	      if(rs.next()){
 	          lbl_Name.setText(rs.getString("name"));
@@ -217,5 +240,10 @@ public class GamePage{
 	    }catch(Exception ex){
 	           JOptionPane.showMessageDialog(null, ex.getMessage());
 	            }
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		GamePage.setVisible(b);
 	}
 }
