@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
 
-public class BasketPage {
+public class BasketPage2 {
 	public class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
@@ -45,7 +45,7 @@ public class BasketPage {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BasketPage window = new BasketPage();
+					BasketPage2 window = new BasketPage2();
 					window.BasketPage.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,7 +57,7 @@ public class BasketPage {
 	/**
 	 * Create the application.
 	 */
-	public BasketPage() {
+	public BasketPage2() {
 		initialize();
 	}
 
@@ -67,7 +67,7 @@ public class BasketPage {
 	
 	public void refresh()
 	{
-		TestBasket3 basketpage = new TestBasket3();
+		BasketPage basketpage = new BasketPage();
 		basketpage.setVisible(true);
 		BasketPage.setVisible(false);
 	}
@@ -148,14 +148,14 @@ public class BasketPage {
 		
 		JLabel lbremove = new JLabel("");
 		lbremove.setBounds(253, 391, 200, 50);
-		lbremove.setIcon(new ImageIcon(BasketPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
+		lbremove.setIcon(new ImageIcon(BasketPage2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
 		BasketPage.getContentPane().add(lbremove);
 		
 		
 		
 		JLabel lbback = new JLabel("");
 		lbback.setBounds(43, 391, 200, 50);
-		lbback.setIcon(new ImageIcon(BasketPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
+		lbback.setIcon(new ImageIcon(BasketPage2.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
 		BasketPage.getContentPane().add(lbback);
 		
 		JButton btn_Confirm = new JButton("Confirm");
