@@ -158,11 +158,11 @@ public class GamePage{
 		lblname.setText(LoginPage.username[0]);
 		
 		
-		
+		int i = 0;
 		lbtype.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int i = 0;
+				
 				if(i  == 0){
 					lbaction.setVisible(true);
 					lbstory.setVisible(true);

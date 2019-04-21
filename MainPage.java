@@ -76,7 +76,7 @@ public class MainPage {
 		MainPage.getContentPane().setLayout(null);
 		
 		JPanel Head_panel = new JPanel();
-		Head_panel.setBounds(0, -33, 632, 410);
+		Head_panel.setBounds(0, 0, 634, 410);
 		MainPage.getContentPane().add(Head_panel);
 		Head_panel.setOpaque(false);
 		Head_panel.setLayout(null);
@@ -128,6 +128,43 @@ public class MainPage {
 				BasketPage basketpage = new BasketPage();
 				basketpage.setVisible(true);
 				MainPage.setVisible(false);
+			}
+		});
+		
+		button.setIcon(new ImageIcon(header.class.getResource("/Picture/basket.png")));
+		button.setBounds(537, 3, 83, 59);
+		Head_panel.add(button);
+		
+		JLabel lblUser = new JLabel("User :");
+		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblUser.setBounds(312, 23, 72, 33);
+		Head_panel.add(lblUser);
+		
+		
+		
+		
+		JLabel lblname = new JLabel("New label");
+		lblname.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblname.setBounds(376, 27, 149, 25);
+		Head_panel.add(lblname);
+		lblname.setText(LoginPage.username[0]);
+		
+		int i = 0;
+		lbtype.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				if(i  == 0){
+					lbaction.setVisible(true);
+					lbstory.setVisible(true);
+					lbsimulation.setVisible(true);
+					i = 1;
+				}else {
+					lbaction.setVisible(false);
+					lbstory.setVisible(false);
+					lbsimulation.setVisible(false);
+					i = 0;
+				}
 			}
 		});
 		
