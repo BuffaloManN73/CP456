@@ -26,7 +26,7 @@ import java.awt.Color;
 
 public class GamePage{
 	static ArrayList<String>gameList = new ArrayList<>();
-	
+	int i = 0;
 	public class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
@@ -98,6 +98,14 @@ public class GamePage{
 		Head_panel.add(lblNewLabel);
 		
 		JLabel lbmain = new JLabel("");
+		lbmain.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
+				GamePage.setVisible(false);	
+			}
+		});
 		lbmain.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
 		lbmain.setBounds(8, 161, 200, 50);
 		Head_panel.add(lbmain);
@@ -157,8 +165,6 @@ public class GamePage{
 		Head_panel.add(lblname);
 		lblname.setText(LoginPage.username[0]);
 		
-		
-		int i = 0;
 		lbtype.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

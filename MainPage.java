@@ -20,7 +20,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class MainPage {
-	
+	int i = 0;
 	public class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
@@ -149,7 +149,6 @@ public class MainPage {
 		Head_panel.add(lblname);
 		lblname.setText(LoginPage.username[0]);
 		
-		int i = 0;
 		lbtype.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
