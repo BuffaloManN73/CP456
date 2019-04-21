@@ -156,12 +156,18 @@ public class BasketPage2 {
 		BasketPage.getContentPane().add(lbback);
 		
 		JButton btn_Confirm = new JButton("Confirm");
+		
 		btn_Confirm.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				GamePage.addorder();
+				GamePage.gameList.clear();
 				MainPage mainpage = new MainPage();
 				mainpage.setVisible(true);
 				BasketPage.setVisible(false);
+				
+				
+				
 			}
 		});
 		btn_Confirm.setBounds(519, 403, 89, 23);

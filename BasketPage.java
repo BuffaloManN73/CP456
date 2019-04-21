@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class BasketPage {
@@ -155,13 +157,18 @@ public class BasketPage {
 		BasketPage.getContentPane().add(lbback);
 		
 		JButton btn_Confirm = new JButton("Confirm");
+
 		btn_Confirm.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				GamePage.addorder();
 				GamePage.gameList.clear();
 				MainPage mainpage = new MainPage();
 				mainpage.setVisible(true);
 				BasketPage.setVisible(false);
+				
+				//sql order
+				
 			}
 		});
 		btn_Confirm.setBounds(519, 403, 89, 23);
