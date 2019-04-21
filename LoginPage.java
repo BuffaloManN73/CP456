@@ -72,7 +72,7 @@ public class LoginPage {
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblPassword.setBounds(110, 299, 198, 43);
+		lblPassword.setBounds(110, 299, 153, 43);
 		frmLogin.getContentPane().add(lblPassword);
 		
 		JLabel lblConfirm = new JLabel("Confirm \u0E23\u0E2D\u0E17\u0E33\u0E1B\u0E38\u0E48\u0E21");
