@@ -44,7 +44,7 @@ public class header {
 	private void initialize() {
 		frmAppreviewgame = new JFrame();
 		frmAppreviewgame.setTitle("AppReviewGame");
-		frmAppreviewgame.setBounds(100, 100, 750, 300);
+		frmAppreviewgame.setBounds(100, 100, 651, 410);
 		frmAppreviewgame.setBounds(100, 100, 650, 410);
 		frmAppreviewgame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAppreviewgame.getContentPane().setLayout(null);
