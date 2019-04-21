@@ -13,7 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
-import GamePage.Function;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -443,7 +442,7 @@ public class MainPage {
 		
 	}
 
-	protected static void setVisible(boolean b) {
+	public static void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		MainPage.setVisible(b);
 	}

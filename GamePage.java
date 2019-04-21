@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -23,6 +25,8 @@ import javax.swing.UIManager;
 import java.awt.Color;
 
 public class GamePage{
+	static ArrayList<String>gameList = new ArrayList<>();
+	
 	public class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
@@ -196,9 +200,28 @@ public class GamePage{
 		btnBack.setFont(new Font("Tahoma", Font.BOLD, 18));
 		
 		btnBack.setBounds(100, 800, 150, 50);
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MainPage.setVisible(true);
+				GamePage.setVisible(false);
+			}
+		});
 		Game_panel.add(btnBack);
-		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnAdd.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (gameList.size() < 3){
+					gameList.add(MainPage.ID);
+					JOptionPane.showMessageDialog(null, "Added!!");
+					//System.out.print(gameList);
+			}else {
+					JOptionPane.showMessageDialog(null, "Can't do that!!");
+			}
+			}
+		});
 		
+		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnAdd.setBounds(350, 800, 150, 50);
 		Game_panel.add(btnAdd);
 		
