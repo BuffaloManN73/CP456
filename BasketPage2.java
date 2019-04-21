@@ -76,10 +76,7 @@ public class BasketPage2 {
 		BasketPage = new JFrame();
 		BasketPage.setBounds(100, 100, 700, 500);
 		BasketPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		TestBasket3 testbasket = new TestBasket3();
-		testbasket.setVisible(true);
-		BasketPage.setVisible(false);
+
 		
 		JCheckBox chckbxGame1 = new JCheckBox("Select this");
 		chckbxGame1.setBounds(56, 344, 111, 25);

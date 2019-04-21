@@ -98,6 +98,14 @@ public class header {
 		frmAppreviewgame.getContentPane().add(lbtype);
 		
 		JButton button = new JButton("");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				BasketPage basketpage = new BasketPage();
+				basketpage.setVisible(true);
+				frmAppreviewgame.setVisible(false);
+			}
+		});
 		button.setIcon(new ImageIcon(header.class.getResource("/Picture/basket.png")));
 		button.setBounds(537, 3, 83, 59);
 		frmAppreviewgame.getContentPane().add(button);
@@ -134,5 +142,10 @@ public class header {
 				}
 			}
 		});
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		frmAppreviewgame.setVisible(b);
 	}
 }
