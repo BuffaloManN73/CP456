@@ -22,6 +22,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.UIManager;
+
+
 import java.awt.Color;
 
 public class GamePage{
@@ -46,6 +48,11 @@ public class GamePage{
 	      
 	   }
 	    
+
+	
+	
+	
+	
 	private JFrame GamePage;
 	private final JLabel lbl_Score_Head = new JLabel("Score");
 	private final JLabel lbl_Score_Detail = new JLabel("score");
@@ -75,6 +82,56 @@ public class GamePage{
 		initialize();
 	}
 
+	
+	public static void addorder() {
+		try {
+			
+		    //ResultSet rs = null;
+		    Connection con = null;
+		    PreparedStatement ps = null;
+		    con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
+		    ps = con.prepareStatement("SELECT * FROM user WHERE username = LoginPage.username[0]");
+			String query = "UPDATE user SET game1 = ?, game2 = ?, game3 = ? WHERE user.username = ?";
+			PreparedStatement pst = con.prepareStatement(query);
+			
+			pst.setString(1, "ss");
+			pst.setString(2, "ss");
+			pst.setString(3, "sssssss");
+			pst.setString(4, LoginPage.username[0]);
+			System.out.print(LoginPage.username[0]);
+			pst.execute();
+			JOptionPane.showMessageDialog(null, "Order Success");
+			}catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Fail");
+			}
+			/**
+			if(gameList.size() == 0) {
+				JOptionPane.showMessageDialog(null, "add game before confirm");
+			}else if(gameList.size() == 1){
+				pst.setString(1, gameList.get(0));
+				pst.execute();
+				JOptionPane.showMessageDialog(null, "Order Success");
+			}else if(gameList.size() == 2){
+				pst.setString(1, gameList.get(0));
+				pst.setString(2, gameList.get(1));
+				pst.execute();
+				JOptionPane.showMessageDialog(null, "Order Success");
+			}else if(gameList.size() == 3){
+				pst.setString(1, gameList.get(0));
+				pst.setString(2, gameList.get(1));
+				pst.setString(3, gameList.get(2));
+				pst.execute();
+				JOptionPane.showMessageDialog(null, "Order Success");
+			}
+			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Fail");
+		}
+		*/
+		
+	}
+
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */

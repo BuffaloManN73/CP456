@@ -128,6 +128,11 @@ public class LoginPage {
 					    		  username[0] =  textFieldusername.getText();
 					    		  JOptionPane.showMessageDialog(null, "Login Success");
 					    		  System.out.print(username[0]);
+					    		  
+									header header = new header();
+									header.setVisible(true);
+									frmLogin.setVisible(false);
+					    		  
 					    	  }else {
 					    		  JOptionPane.showMessageDialog(null, "Wrong Password");
 					    	  }
@@ -150,5 +155,10 @@ public class LoginPage {
 		});
 		btnRegister.setBounds(336, 388, 146, 34);
 		frmLogin.getContentPane().add(btnRegister);
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		frmLogin.setVisible(b);
 	}
 }
