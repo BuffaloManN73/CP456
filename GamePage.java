@@ -93,41 +93,44 @@ public class GamePage{
 		    ps = con.prepareStatement("SELECT * FROM user WHERE username = LoginPage.username[0]");
 			String query = "UPDATE user SET game1 = ?, game2 = ?, game3 = ? WHERE user.username = ?";
 			PreparedStatement pst = con.prepareStatement(query);
-			
-			pst.setString(1, "ss");
-			pst.setString(2, "ss");
-			pst.setString(3, "sssssss");
 			pst.setString(4, LoginPage.username[0]);
-			System.out.print(LoginPage.username[0]);
-			pst.execute();
-			JOptionPane.showMessageDialog(null, "Order Success");
-			}catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Fail");
-			}
-			/**
+			//pst.setString(1, "ss");
+			//pst.setString(2, "ss");
+			//pst.setString(3, "sssssss");
+			//pst.setString(4, LoginPage.username[0]);
+			//System.out.print(LoginPage.username[0]);
+			//pst.execute();
+			//JOptionPane.showMessageDialog(null, "Order Success");
+			//}catch (Exception e) {
+			//	JOptionPane.showMessageDialog(null, "Fail");
+			//}
+			
 			if(gameList.size() == 0) {
 				JOptionPane.showMessageDialog(null, "add game before confirm");
 			}else if(gameList.size() == 1){
 				pst.setString(1, gameList.get(0));
+				pst.setString(2, null);
+				pst.setString(3, null);
 				pst.execute();
-				JOptionPane.showMessageDialog(null, "Order Success");
+				JOptionPane.showMessageDialog(null, "Order Success1");
 			}else if(gameList.size() == 2){
 				pst.setString(1, gameList.get(0));
 				pst.setString(2, gameList.get(1));
+				pst.setString(3, null);
 				pst.execute();
-				JOptionPane.showMessageDialog(null, "Order Success");
+				JOptionPane.showMessageDialog(null, "Order Success2");
 			}else if(gameList.size() == 3){
 				pst.setString(1, gameList.get(0));
 				pst.setString(2, gameList.get(1));
 				pst.setString(3, gameList.get(2));
 				pst.execute();
-				JOptionPane.showMessageDialog(null, "Order Success");
+				JOptionPane.showMessageDialog(null, "Order Success3");
 			}
 			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Fail");
 		}
-		*/
+		
 		
 	}
 

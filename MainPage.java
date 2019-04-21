@@ -76,7 +76,7 @@ public class MainPage {
 		MainPage.getContentPane().setLayout(null);
 		
 		JPanel Head_panel = new JPanel();
-		Head_panel.setBounds(0, -33, 632, 410);
+		Head_panel.setBounds(0, 0, 634, 410);
 		MainPage.getContentPane().add(Head_panel);
 		Head_panel.setOpaque(false);
 		Head_panel.setLayout(null);
