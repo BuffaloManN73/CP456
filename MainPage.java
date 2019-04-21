@@ -97,7 +97,7 @@ public class MainPage {
 			}
 		});
 		lbl_Pic1.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Pic1.setBounds(25, 50, 150, 200);
+		lbl_Pic1.setBounds(25, 50, 150, 200); //position for display game
 		Main_panel.add(lbl_Pic1);
 		
 		JLabel lbl_Pic2 = new JLabel("GamePic2");
@@ -111,7 +111,7 @@ public class MainPage {
 			}
 		});
 		lbl_Pic2.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Pic2.setBounds(225, 50, 150, 200);
+		lbl_Pic2.setBounds(225, 50, 150, 200);//position for display game
 		Main_panel.add(lbl_Pic2);
 		
 		JLabel lbl_Pic3 = new JLabel("GamePic3");
@@ -125,7 +125,7 @@ public class MainPage {
 			}
 		});
 		lbl_Pic3.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Pic3.setBounds(425, 50, 150, 200);
+		lbl_Pic3.setBounds(425, 50, 150, 200);//position for display game
 		Main_panel.add(lbl_Pic3);
 		
 		JLabel lbl_Game1 = new JLabel("Game1");
@@ -139,7 +139,7 @@ public class MainPage {
 			}
 		});
 		lbl_Game1.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Game1.setBounds(25, 287, 150, 40);
+		lbl_Game1.setBounds(25, 287, 150, 40);//position for display game
 		Main_panel.add(lbl_Game1);
 		
 		JLabel lbl_Game2 = new JLabel("Game2");
@@ -153,7 +153,7 @@ public class MainPage {
 			}
 		});
 		lbl_Game2.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Game2.setBounds(225, 287, 150, 40);
+		lbl_Game2.setBounds(225, 287, 150, 40);//position for display game
 		Main_panel.add(lbl_Game2);
 		
 		JLabel lbl_Game3 = new JLabel("Game3");
@@ -167,7 +167,7 @@ public class MainPage {
 			}
 		});
 		lbl_Game3.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Game3.setBounds(425, 287, 150, 40);
+		lbl_Game3.setBounds(425, 287, 150, 40);//position for display game
 		Main_panel.add(lbl_Game3);
 		
 		JLabel lbl_Pic4 = new JLabel("GamePic4");
