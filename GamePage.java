@@ -204,7 +204,7 @@ public class GamePage{
 		
 		Function f = new Function();
 	    ResultSet rs = null;
-	    //rs = f.find("1"); get ID from MainPage
+	    rs = f.find(MainPage.ID);
 	    try{
 	      if(rs.next()){
 	          lbl_Name.setText(rs.getString("name"));
@@ -217,5 +217,10 @@ public class GamePage{
 	    }catch(Exception ex){
 	           JOptionPane.showMessageDialog(null, ex.getMessage());
 	            }
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		GamePage.setVisible(b);
 	}
 }
