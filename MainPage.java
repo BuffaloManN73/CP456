@@ -1,7 +1,9 @@
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 public class MainPage {
 
@@ -39,8 +41,18 @@ public class MainPage {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 632, 210);
-		frame.getContentPane().add(panel);
+		JPanel Head_panel = new JPanel();
+		Head_panel.setBounds(0, -33, 632, 410);
+		frame.getContentPane().add(Head_panel);
+		Head_panel.setOpaque(false);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 221, 632, 750);
+		frame.getContentPane().add(scrollPane);
+		scrollPane.setPreferredSize(new Dimension(600,700));
+		
+		JPanel Main_panel = new JPanel();
+		scrollPane.setViewportView(Main_panel);
+		
 	}
 }

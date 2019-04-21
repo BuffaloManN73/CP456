@@ -82,7 +82,7 @@ public class GamePage{
 		
 		JPanel Head_panel = new JPanel();
 		Head_panel.setBackground(Color.WHITE);
-		Head_panel.setBounds(12, 13, 608, 410);
+		Head_panel.setBounds(0, 0, 634, 410);
 		GamePage.getContentPane().add(Head_panel);
 		Head_panel.setLayout(null);
 		Head_panel.setOpaque(false);
@@ -160,7 +160,7 @@ public class GamePage{
 		
 		JScrollPane scrollPane = new JScrollPane(Game_panel);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(12, 236, 608, 714);
+		scrollPane.setBounds(0, 236, 634, 714);
 		GamePage.getContentPane().add(scrollPane);
 		scrollPane.setPreferredSize(new Dimension(600,700));
 		
