@@ -5,10 +5,15 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Font;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.JTextField;
+
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -37,6 +42,26 @@ public class RegisterPage {
 		});
 	}
 
+	
+	 public class Function{
+	       Connection con = null;
+	       ResultSet rs = null;
+	       PreparedStatement ps = null;
+	       public ResultSet find(String s){
+	           try{
+	        	Class.forName("com.mysql.jdbc.Driver");
+	        	con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
+	        	ps = con.prepareStatement("select * from user where username = ?");
+	        	ps.setString(1,s);
+	        	rs = ps.executeQuery();
+	           }catch(Exception ex){
+	              JOptionPane.showMessageDialog(null, ex.getMessage());
+	           }
+	           return rs;
+	       }
+	       
+	   }
+	
 	/**
 	 * Create the application.
 	 */
@@ -114,6 +139,28 @@ public class RegisterPage {
 		frmAppbuysteam.getContentPane().add(btnBack);
 		
 		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			try {
+				Function f = new Function();
+			    ResultSet rs = null;
+			    Connection con = null;
+			    PreparedStatement ps = null;
+				String query = "insert into user (username,password,email,phone) values (?,?,?,?)";
+				PreparedStatement pst = con.prepareStatement(query);
+				pst.setString(1, textFieldUsername.getText());
+				pst.setString(2, textFieldPassword.getText());
+				pst.setString(3, textFieldemail.getText());
+				pst.setString(4, textFielphone.getText());
+				JOptionPane.showMessageDialog(null, "Register Success");
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Fail");
+			}
+			}
+		});
+		
+		
+		
 		btnConfirm.setBounds(364, 487, 97, 25);
 		frmAppbuysteam.getContentPane().add(btnConfirm);
 	}
