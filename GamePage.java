@@ -11,13 +11,18 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-import javax.swing.JScrollBar;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JScrollPane;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.UIManager;
+import java.awt.Color;
 
-public class GamePage {
+public class GamePage{
 	public class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
@@ -76,10 +81,77 @@ public class GamePage {
 		GamePage.getContentPane().setLayout(null);
 		
 		JPanel Head_panel = new JPanel();
-		Head_panel.setBounds(12, 13, 608, 210);
+		Head_panel.setBackground(Color.WHITE);
+		Head_panel.setBounds(12, 13, 608, 410);
 		GamePage.getContentPane().add(Head_panel);
 		Head_panel.setLayout(null);
+		Head_panel.setOpaque(false);
 		
+		/*
+		 * copypaste from header.java 21/04/19 
+		 * 
+		JLabel lblLogo = new JLabel("");
+		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
+		lblLogo.setBounds(0, 0, 300, 150);
+		Head_panel.add(lblLogo);
+		
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(287, 24, 340, 45);
+		Head_panel.add(lblNewLabel);
+		
+		JLabel lbmain = new JLabel("");
+		lbmain.setIcon(new ImageIcon("C:\\Users\\Administrator\\appreviewgame\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png"));
+		lbmain.setBounds(8, 161, 200, 50);
+		Head_panel.add(lbmain);
+		
+		JLabel lbgamehit = new JLabel("");
+		lbgamehit.setIcon(new ImageIcon("C:\\Users\\Administrator\\appreviewgame\\Picture\\\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png"));
+		lbgamehit.setBounds(218, 161, 200, 50);
+		Head_panel.add(lbgamehit);
+		
+		JLabel lbstory = new JLabel("");
+		lbstory.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21story.png")));
+		lbstory.setBounds(428, 213, 200, 50);
+		lbstory.setVisible(false);
+		Head_panel.add(lbstory);
+		
+		JLabel lbaction = new JLabel("");
+		lbaction.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
+		lbaction.setBounds(428, 265, 200, 50);
+		lbaction.setVisible(false);
+		Head_panel.add(lbaction);
+		
+		JLabel lbsimulation = new JLabel("");
+		lbsimulation.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
+		lbsimulation.setBounds(428, 317, 200, 50);
+		lbsimulation.setVisible(false);
+		Head_panel.add(lbsimulation);
+		
+		JLabel lbtype = new JLabel("");
+		lbtype.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
+		lbtype.setBounds(428, 161, 200, 50);
+		Head_panel.add(lbtype);
+		lbtype.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int i = 0;
+				if(i  == 0){
+					lbaction.setVisible(true);
+					lbstory.setVisible(true);
+					lbsimulation.setVisible(true);
+					i = 1;
+				}else {
+					lbaction.setVisible(false);
+					lbstory.setVisible(false);
+					lbsimulation.setVisible(false);
+					i = 0;
+				}
+			}
+		});
+		*/
 		
 		
 		JPanel Game_panel = new JPanel();
@@ -132,7 +204,7 @@ public class GamePage {
 		
 		Function f = new Function();
 	    ResultSet rs = null;
-	    rs = f.find("1");
+	    //rs = f.find("1"); get ID from MainPage
 	    try{
 	      if(rs.next()){
 	          lbl_Name.setText(rs.getString("name"));
