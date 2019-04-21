@@ -2,15 +2,22 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class RegisterPage {
 
 	private JFrame frmAppbuysteam;
-	private JTextField textFieldusername;
-	private JTextField textFieldpassword;
+	private JTextField textFieldUsername;
+	private JTextField textFieldPassword;
 	private JTextField textFieldemail;
 	private JTextField textFielphone;
 
@@ -57,25 +64,25 @@ public class RegisterPage {
 		lblRegister.setBounds(231, 176, 233, 50);
 		frmAppbuysteam.getContentPane().add(lblRegister);
 		
-		JLabel lblusername = new JLabel("Username");
-		lblusername.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblusername.setBounds(123, 242, 198, 43);
-		frmAppbuysteam.getContentPane().add(lblusername);
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblUsername.setBounds(123, 242, 198, 43);
+		frmAppbuysteam.getContentPane().add(lblUsername);
 		
-		textFieldusername = new JTextField();
-		textFieldusername.setColumns(10);
-		textFieldusername.setBounds(282, 248, 241, 34);
-		frmAppbuysteam.getContentPane().add(textFieldusername);
+		textFieldUsername = new JTextField();
+		textFieldUsername.setColumns(10);
+		textFieldUsername.setBounds(282, 248, 241, 34);
+		frmAppbuysteam.getContentPane().add(textFieldUsername);
 		
-		JLabel lblpassword = new JLabel("Password");
-		lblpassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblpassword.setBounds(123, 298, 198, 43);
-		frmAppbuysteam.getContentPane().add(lblpassword);
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblPassword.setBounds(123, 298, 198, 43);
+		frmAppbuysteam.getContentPane().add(lblPassword);
 		
-		textFieldpassword = new JTextField();
-		textFieldpassword.setColumns(10);
-		textFieldpassword.setBounds(282, 302, 241, 34);
-		frmAppbuysteam.getContentPane().add(textFieldpassword);
+		textFieldPassword = new JTextField();
+		textFieldPassword.setColumns(10);
+		textFieldPassword.setBounds(282, 302, 241, 34);
+		frmAppbuysteam.getContentPane().add(textFieldPassword);
 		
 		JLabel lblEmail = new JLabel("Email");
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 30));
@@ -97,13 +104,20 @@ public class RegisterPage {
 		textFielphone.setBounds(282, 414, 241, 34);
 		frmAppbuysteam.getContentPane().add(textFielphone);
 		
-		JLabel lblBack = new JLabel("Back \u0E23\u0E2D\u0E17\u0E33\u0E1B\u0E38\u0E48\u0E21");
-		lblBack.setBounds(176, 497, 107, 16);
-		frmAppbuysteam.getContentPane().add(lblBack);
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		btnBack.setBounds(178, 487, 97, 25);
+		frmAppbuysteam.getContentPane().add(btnBack);
 		
-		JLabel label_2 = new JLabel("Confirm \u0E23\u0E2D\u0E17\u0E33\u0E1B\u0E38\u0E48\u0E21");
-		label_2.setBounds(395, 497, 107, 16);
-		frmAppbuysteam.getContentPane().add(label_2);
+		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.setBounds(364, 487, 97, 25);
+		frmAppbuysteam.getContentPane().add(btnConfirm);
 	}
+
+
 
 }

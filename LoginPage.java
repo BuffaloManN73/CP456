@@ -2,9 +2,21 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
+
+
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LoginPage {
 
@@ -28,6 +40,25 @@ public class LoginPage {
 		});
 	}
 
+	 public class Function{
+	       Connection con = null;
+	       ResultSet rs = null;
+	       PreparedStatement ps = null;
+	       public ResultSet find(String s){
+	           try{
+	        	Class.forName("com.mysql.jdbc.Driver");
+	        	con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
+	        	ps = con.prepareStatement("select * from user where username = ?");
+	        	ps.setString(1,s);
+	        	rs = ps.executeQuery();
+	           }catch(Exception ex){
+	              JOptionPane.showMessageDialog(null, ex.getMessage());
+	           }
+	           return rs;
+	       }
+	       
+	   }
+	
 	/**
 	 * Create the application.
 	 */
@@ -75,12 +106,41 @@ public class LoginPage {
 		lblPassword.setBounds(110, 299, 153, 43);
 		frmLogin.getContentPane().add(lblPassword);
 		
-		JLabel lblConfirm = new JLabel("Confirm \u0E23\u0E2D\u0E17\u0E33\u0E1B\u0E38\u0E48\u0E21");
-		lblConfirm.setBounds(177, 388, 107, 16);
-		frmLogin.getContentPane().add(lblConfirm);
+		JButton btnLogin = new JButton("Confirm");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Function f = new Function();
+			    ResultSet rs = null;
+			    try{
+				      if(textFieldusername.getText().equals("") || textFieldpassword.getText().equals("")){
+				    	  JOptionPane.showMessageDialog(null, "Write username and password pls");
+				      }else{
+				    	  rs = f.find(textFieldusername.getText());
+				    	  if(rs.next()){
+					    	  if(textFieldpassword.getText().equals(rs.getString("password"))) {
+					    		
+					    		  JOptionPane.showMessageDialog(null, "Login Success");
+					    	  }else {
+					    		  JOptionPane.showMessageDialog(null, "Wrong Password");
+					    	  }
+					      }  else{
+					          JOptionPane.showMessageDialog(null, "No data for this account");
+					      }
+				      }
+				    }catch(Exception ex){
+				           JOptionPane.showMessageDialog(null, "s");
+				            }
+			}
+		});
+		btnLogin.setBounds(142, 388, 146, 34);
+		frmLogin.getContentPane().add(btnLogin);
 		
-		JLabel lblRegister = new JLabel("Register \u0E23\u0E2D\u0E17\u0E33\u0E1B\u0E38\u0E48\u0E21");
-		lblRegister.setBounds(362, 388, 137, 16);
-		frmLogin.getContentPane().add(lblRegister);
+		JButton btnRegister = new JButton("Register");
+		btnRegister.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnRegister.setBounds(336, 388, 146, 34);
+		frmLogin.getContentPane().add(btnRegister);
 	}
 }
