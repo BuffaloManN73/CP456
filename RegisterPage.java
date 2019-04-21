@@ -143,15 +143,30 @@ public class RegisterPage {
 			public void actionPerformed(ActionEvent arg0) {
 			try {
 				Function f = new Function();
-			    ResultSet rs = null;
+			    //ResultSet rs = null;
 			    Connection con = null;
 			    PreparedStatement ps = null;
+			    con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
 				String query = "insert into user (username,password,email,phone) values (?,?,?,?)";
+			    //String query = "insert into 'user` (`username`, `password`, `email`, `phone`) VALUES ('?', '?', '?', '?')";
 				PreparedStatement pst = con.prepareStatement(query);
-				pst.setString(1, textFieldUsername.getText());
-				pst.setString(2, textFieldPassword.getText());
-				pst.setString(3, textFieldemail.getText());
-				pst.setString(4, textFielphone.getText());
+				
+				if(textFieldUsername.getText().equals("") || textFieldPassword.getText().equals("") || textFieldemail.getText().equals("") || textFielphone.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "Fill all information pls");
+				}else {
+					pst.setString(1, textFieldUsername.getText());
+					pst.setString(2, textFieldPassword.getText());
+					pst.setString(3, textFieldemail.getText());
+					pst.setString(4, textFielphone.getText());
+					
+					pst.execute();
+				}
+
+				
+				//rs = pst.executeQuery();
+
+				//ResultSet rs = pst.executeQuery();
+				
 				JOptionPane.showMessageDialog(null, "Register Success");
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Fail");
