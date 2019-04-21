@@ -27,7 +27,7 @@ public class TestBasket2 {
 	           }
 	           return rs;
 	       }
-	       
+	        
 	   }
 	private JFrame TestBasket2;
 
@@ -42,7 +42,7 @@ public class TestBasket2 {
 					window.TestBasket2.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
-				}
+				} 
 			}
 		});
 		

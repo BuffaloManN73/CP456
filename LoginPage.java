@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -65,6 +66,12 @@ public class LoginPage {
 	public LoginPage() {
 		initialize();
 	}
+	
+	static String[] username = {""} ;
+	
+	//public void storeusername (String a) {
+	//	username[0] = "asss";
+	//}
 
 	/**
 	 * Initialize the contents of the frame.
@@ -118,8 +125,9 @@ public class LoginPage {
 				    	  rs = f.find(textFieldusername.getText());
 				    	  if(rs.next()){
 					    	  if(textFieldpassword.getText().equals(rs.getString("password"))) {
-					    		
+					    		  username[0] =  textFieldusername.getText();
 					    		  JOptionPane.showMessageDialog(null, "Login Success");
+					    		  System.out.print(username[0]);
 					    	  }else {
 					    		  JOptionPane.showMessageDialog(null, "Wrong Password");
 					    	  }

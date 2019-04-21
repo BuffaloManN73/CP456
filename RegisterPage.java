@@ -160,14 +160,16 @@ public class RegisterPage {
 					pst.setString(4, textFielphone.getText());
 					
 					pst.execute();
+					
+					JOptionPane.showMessageDialog(null, "Register Success");
 				}
 
-				
+			
 				//rs = pst.executeQuery();
 
 				//ResultSet rs = pst.executeQuery();
 				
-				JOptionPane.showMessageDialog(null, "Register Success");
+				
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Fail");
 			}
@@ -179,7 +181,4 @@ public class RegisterPage {
 		btnConfirm.setBounds(364, 487, 97, 25);
 		frmAppbuysteam.getContentPane().add(btnConfirm);
 	}
-
-
-
 }

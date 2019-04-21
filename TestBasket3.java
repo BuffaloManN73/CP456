@@ -26,8 +26,8 @@ public class TestBasket3 {
 	              JOptionPane.showMessageDialog(null, ex.getMessage());
 	           }
 	           return rs;
-	       }
-	       
+	       } 
+	      
 	   }
 	private JFrame TestBasket3;
 
@@ -43,7 +43,7 @@ public class TestBasket3 {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
+			} 
 		});
 		
 	}
