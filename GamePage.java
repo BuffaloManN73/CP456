@@ -151,6 +151,11 @@ public class GamePage{
 		Head_panel.setLayout(null);
 		Head_panel.setOpaque(false);
 		
+		JLabel lblLogo = new JLabel("");
+		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
+		lblLogo.setBounds(0, 0, 300, 150);
+		Head_panel.add(lblLogo);
+		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
