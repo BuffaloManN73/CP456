@@ -25,6 +25,7 @@ import javax.swing.UIManager;
 
 
 import java.awt.Color;
+import javax.swing.JTextField;
 
 public class GamePage{
 	static ArrayList<String>gameList = new ArrayList<>();
@@ -58,6 +59,7 @@ public class GamePage{
 	private final JLabel lbl_Score_Detail = new JLabel("score");
 	private final JButton btnBack = new JButton("Back");
 	private final JButton btnAdd = new JButton("Add");
+	private JTextField txt_Search;
 
 	/**
 	 * Launch the application.
@@ -151,12 +153,23 @@ public class GamePage{
 		Head_panel.setLayout(null);
 		Head_panel.setOpaque(false);
 		
+		txt_Search = new JTextField();
+		txt_Search.setColumns(10);
+		txt_Search.setBounds(355, 70, 260, 33);
+		Head_panel.add(txt_Search);
+		
 		JLabel lblLogo = new JLabel("");
 		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
 		lblLogo.setBounds(0, 0, 300, 150);
 		Head_panel.add(lblLogo);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				MainPage.search(txt_Search.getText());
+			}
+		});
 		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(288, 64, 340, 45);
@@ -397,6 +410,7 @@ public class GamePage{
        	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
            break;
 	    }
+	    
 	}
 
 	public void setVisible(boolean b) {

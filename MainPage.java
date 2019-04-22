@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JTextField;
 
 public class MainPage {
 	int i = 0;
@@ -86,6 +87,7 @@ public class MainPage {
 	static JLabel lbl_Game7 = new JLabel("Game7");
 	static JLabel lbl_Game8 = new JLabel("Game8");
 	static JLabel lbl_Game9 = new JLabel("Game9");
+	private JTextField txt_Search;
 	
 	public void initialize() {
 		MainPage = new JFrame();
@@ -99,12 +101,23 @@ public class MainPage {
 		Head_panel.setOpaque(false);
 		Head_panel.setLayout(null);
 		
+		txt_Search = new JTextField();
+		txt_Search.setBounds(355, 70, 260, 33);
+		Head_panel.add(txt_Search);
+		txt_Search.setColumns(10);
+		
 		JLabel lblLogo = new JLabel("");
 		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
 		lblLogo.setBounds(0, 0, 300, 150);
 		Head_panel.add(lblLogo);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				search(txt_Search.getText());
+			}
+		});
 		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(288, 64, 340, 45);
@@ -671,5 +684,22 @@ public class MainPage {
 		lbl_Game8.setBounds(425, 953, 150, 40);
 		
 	}
-
+	public static void search(String A) {
+		GamePage gamepage = new GamePage();
+		MainPage mainpage = new MainPage();
+		switch(A) {
+		case"Farcry" : ID = "1";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"Sekiro" : ID = "2";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"GTA V" : ID = "3";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"Stardew Valley" : ID = "4";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"Monster Hunter World" : ID = "5";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"Jump Force" : ID = "6";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"Farming Simulator " : ID = "7";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"Train Simulator " : ID = "8";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"Hand Simulator" : ID = "9";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		default :
+			JOptionPane.showMessageDialog(null,"No Game Found");
+		}
+	}
+	
 }
