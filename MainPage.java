@@ -38,7 +38,7 @@ public class MainPage {
 	      
 	   }
 
-	private JFrame MainPage;
+	private static JFrame MainPage;
 
 	/**
 	 * Launch the application.
@@ -775,18 +775,17 @@ public class MainPage {
 	}
 	
 	public static void search(String A) {
-		GamePage gamepage = new GamePage();
-		MainPage mainpage = new MainPage();
+		
 		switch(A) {
-		case"Farcry" : ID = "1";gamepage.setVisible(true);mainpage.setVisible(false);break;
-		case"Sekiro" : ID = "2";gamepage.setVisible(true);mainpage.setVisible(false);break;
-		case"GTA V" : ID = "3";gamepage.setVisible(true);mainpage.setVisible(false);break;
-		case"Stardew Valley" : ID = "4";gamepage.setVisible(true);mainpage.setVisible(false);break;
-		case"Monster Hunter World" : ID = "5";gamepage.setVisible(true);mainpage.setVisible(false);break;
-		case"Jump Force" : ID = "6";gamepage.setVisible(true);mainpage.setVisible(false);break;
-		case"Farming Simulator " : ID = "7";gamepage.setVisible(true);mainpage.setVisible(false);break;
-		case"Train Simulator " : ID = "8";gamepage.setVisible(true);mainpage.setVisible(false);break;
-		case"Hand Simulator" : ID = "9";gamepage.setVisible(true);mainpage.setVisible(false);break;
+		case"Farcry" : ID = "1";GamePage gamepage = new GamePage();gamepage.setVisible(true);MainPage.setVisible(false);break;
+		case"Sekiro" : ID = "2";GamePage gamepage1 = new GamePage();gamepage1.setVisible(true);MainPage.setVisible(false);break;
+		case"GTA V" : ID = "3";GamePage gamepage2 = new GamePage();gamepage2.setVisible(true);MainPage.setVisible(false);break;
+		case"Stardew Valley" : ID = "4";GamePage gamepage3 = new GamePage();gamepage3.setVisible(true);MainPage.setVisible(false);break;
+		case"Monster Hunter World" : ID = "5";GamePage gamepage4 = new GamePage();gamepage4.setVisible(true);MainPage.setVisible(false);break;
+		case"Jump Force" : ID = "6";GamePage gamepage5 = new GamePage();gamepage5.setVisible(true);MainPage.setVisible(false);break;
+		case"Farming Simulator " : ID = "7";GamePage gamepage6 = new GamePage();gamepage6.setVisible(true);MainPage.setVisible(false);break;
+		case"Train Simulator " : ID = "8";GamePage gamepage7 = new GamePage();gamepage7.setVisible(true);MainPage.setVisible(false);break;
+		case"Hand Simulator" : ID = "9";GamePage gamepage8 = new GamePage();gamepage8.setVisible(true);MainPage.setVisible(false);break;
 		default :
 			JOptionPane.showMessageDialog(null,"No Game Found");
 		}

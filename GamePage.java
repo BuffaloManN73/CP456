@@ -179,10 +179,10 @@ public class GamePage{
 		lbmain.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				MainPage.MainMenu();
 				MainPage mainpage = new MainPage();
 				mainpage.setVisible(true);
-				GamePage.setVisible(false);	
+				GamePage.setVisible(false);
+				MainPage.MainMenu();
 			}
 		});
 		lbmain.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
