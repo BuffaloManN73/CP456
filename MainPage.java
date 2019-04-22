@@ -124,6 +124,12 @@ public class MainPage {
 		Head_panel.add(lblNewLabel);
 		
 		JLabel lbmain = new JLabel("");
+		lbmain.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				MainMenu();
+			}
+		});
 		lbmain.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
 		lbmain.setBounds(8, 161, 200, 50);
 		Head_panel.add(lbmain);
@@ -470,7 +476,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game1.setText(rs.getString("name"));
-	          lbl_Pic1.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+	          lbl_Pic1.setIcon(new ImageIcon(header.class.getResource("/Picture/1.jpg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -481,7 +487,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game2.setText(rs.getString("name"));
-	          lbl_Pic2.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+	          lbl_Pic2.setIcon(new ImageIcon(header.class.getResource("/Picture/2.jpg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -492,7 +498,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game3.setText(rs.getString("name"));
-	          lbl_Pic3.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+	          lbl_Pic3.setIcon(new ImageIcon(header.class.getResource("/Picture/3.png")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -503,7 +509,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game4.setText(rs.getString("name"));
-	          lbl_Pic4.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+	          lbl_Pic4.setIcon(new ImageIcon(header.class.getResource("/Picture/4.jpeg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -514,7 +520,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game5.setText(rs.getString("name"));
-	          lbl_Pic5.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+	          lbl_Pic5.setIcon(new ImageIcon(header.class.getResource("/Picture/5.png")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -525,7 +531,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game6.setText(rs.getString("name"));
-	          lbl_Pic6.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+	          lbl_Pic6.setIcon(new ImageIcon(header.class.getResource("/Picture/6.jpeg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -536,7 +542,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game7.setText(rs.getString("name"));
-	          lbl_Pic7.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+	          lbl_Pic7.setIcon(new ImageIcon(header.class.getResource("/Picture/7.jpg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -547,7 +553,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game8.setText(rs.getString("name"));
-	          lbl_Pic8.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+	          lbl_Pic8.setIcon(new ImageIcon(header.class.getResource("/Picture/8.jpeg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -558,7 +564,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game9.setText(rs.getString("name"));
-	          lbl_Pic9.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+	          lbl_Pic9.setIcon(new ImageIcon(header.class.getResource("/Picture/9.jpg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -589,6 +595,7 @@ public class MainPage {
 				HIT();
 			}
 		});
+	    
 	}
 
 	public void setVisible(boolean b) {
@@ -609,6 +616,13 @@ public class MainPage {
 		lbl_Pic7.setVisible(false);
 		lbl_Pic8.setVisible(false);
 		lbl_Pic9.setVisible(false);
+		
+		lbl_Game1.setVisible(true);
+		lbl_Game2.setVisible(true);
+		lbl_Game3.setVisible(true);
+		lbl_Pic1.setVisible(true);
+		lbl_Pic2.setVisible(true);
+		lbl_Pic3.setVisible(true);
 		
 		lbl_Pic1.setBounds(25, 50, 150, 200);
 		lbl_Pic2.setBounds(225, 50, 150, 200);
@@ -632,6 +646,13 @@ public class MainPage {
 		lbl_Pic2.setVisible(false);
 		lbl_Pic3.setVisible(false);
 		
+		lbl_Game7.setVisible(true);
+		lbl_Game8.setVisible(true);
+		lbl_Game9.setVisible(true);
+		lbl_Pic7.setVisible(true);
+		lbl_Pic8.setVisible(true);
+		lbl_Pic9.setVisible(true);
+		
 		lbl_Pic7.setBounds(25, 50, 150, 200);
 		lbl_Pic8.setBounds(225, 50, 150, 200);
 		lbl_Pic9.setBounds(425, 50, 150, 200);
@@ -654,6 +675,13 @@ public class MainPage {
 		lbl_Pic8.setVisible(false);
 		lbl_Pic9.setVisible(false);
 		
+		lbl_Game4.setVisible(true);
+		lbl_Game5.setVisible(true);
+		lbl_Game6.setVisible(true);
+		lbl_Pic4.setVisible(true);
+		lbl_Pic5.setVisible(true);
+		lbl_Pic6.setVisible(true);
+		
 		lbl_Pic4.setBounds(25, 50, 150, 200);
 		lbl_Pic5.setBounds(225, 50, 150, 200);
 		lbl_Pic6.setBounds(425, 50, 150, 200);
@@ -663,6 +691,25 @@ public class MainPage {
 	}
 	
 	public static void HIT() {
+		
+		lbl_Game1.setVisible(true);
+		lbl_Game2.setVisible(true);
+		lbl_Game3.setVisible(true);
+		lbl_Game4.setVisible(true);
+		lbl_Game5.setVisible(true);
+		lbl_Game6.setVisible(true);
+		lbl_Game7.setVisible(true);
+		lbl_Game8.setVisible(true);
+		lbl_Game9.setVisible(true);
+		lbl_Pic1.setVisible(true);
+		lbl_Pic2.setVisible(true);
+		lbl_Pic3.setVisible(true);
+		lbl_Pic4.setVisible(true);
+		lbl_Pic5.setVisible(true);
+		lbl_Pic6.setVisible(true);
+		lbl_Pic7.setVisible(true);
+		lbl_Pic8.setVisible(true);
+		lbl_Pic9.setVisible(true);
 		
 		lbl_Pic3.setBounds(25, 50, 150, 200);
 		lbl_Pic2.setBounds(225, 50, 150, 200);
@@ -684,6 +731,49 @@ public class MainPage {
 		lbl_Game8.setBounds(425, 953, 150, 40);
 		
 	}
+	
+	public static void MainMenu() {
+		
+		lbl_Game1.setVisible(true);
+		lbl_Game2.setVisible(true);
+		lbl_Game3.setVisible(true);
+		lbl_Game4.setVisible(true);
+		lbl_Game5.setVisible(true);
+		lbl_Game6.setVisible(true);
+		lbl_Game7.setVisible(true);
+		lbl_Game8.setVisible(true);
+		lbl_Game9.setVisible(true);
+		lbl_Pic1.setVisible(true);
+		lbl_Pic2.setVisible(true);
+		lbl_Pic3.setVisible(true);
+		lbl_Pic4.setVisible(true);
+		lbl_Pic5.setVisible(true);
+		lbl_Pic6.setVisible(true);
+		lbl_Pic7.setVisible(true);
+		lbl_Pic8.setVisible(true);
+		lbl_Pic9.setVisible(true);
+		
+		lbl_Pic1.setBounds(25, 50, 150, 200);
+		lbl_Pic2.setBounds(225, 50, 150, 200);
+		lbl_Pic3.setBounds(425, 50, 150, 200);
+		lbl_Game1.setBounds(25, 287, 150, 40); 
+		lbl_Game2.setBounds(225, 287, 150, 40);
+		lbl_Game3.setBounds(425, 287, 150, 40);
+		lbl_Pic4.setBounds(25, 383, 150, 200);
+		lbl_Pic5.setBounds(225, 383, 150, 200);
+		lbl_Pic6.setBounds(425, 383, 150, 200);
+		lbl_Game4.setBounds(25, 620, 150, 40);
+		lbl_Game5.setBounds(225, 620, 150, 40);
+		lbl_Game6.setBounds(425, 620, 150, 40);
+		lbl_Pic7.setBounds(25, 716, 150, 200);
+		lbl_Pic8.setBounds(225, 716, 150, 200);
+		lbl_Pic9.setBounds(425, 716, 150, 200);
+		lbl_Game7.setBounds(25, 953, 150, 40);
+		lbl_Game8.setBounds(225, 953, 150, 40);
+		lbl_Game9.setBounds(425, 953, 150, 40);
+		
+	}
+	
 	public static void search(String A) {
 		GamePage gamepage = new GamePage();
 		MainPage mainpage = new MainPage();

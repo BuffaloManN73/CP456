@@ -179,6 +179,7 @@ public class GamePage{
 		lbmain.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+				MainPage.MainMenu();
 				MainPage mainpage = new MainPage();
 				mainpage.setVisible(true);
 				GamePage.setVisible(false);	
@@ -343,6 +344,7 @@ public class GamePage{
 		btnBack.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				MainPage.MainMenu();
 				MainPage mainpage = new MainPage();
 				mainpage.setVisible(true);
 				GamePage.setVisible(false);
@@ -410,7 +412,7 @@ public class GamePage{
        	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
            break;
 	    }
-	    
+	    lbl_Picture.setText(null);
 	}
 
 	public void setVisible(boolean b) {
