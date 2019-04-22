@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -6,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,7 +13,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -69,7 +66,28 @@ public class MainPage {
 	 * Initialize the contents of the frame.
 	 */
 	static String ID;
-	private void initialize() {
+	
+	static JLabel lbl_Pic1 = new JLabel("GamePic1");
+	static JLabel lbl_Pic2 = new JLabel("GamePic2");
+	static JLabel lbl_Pic3 = new JLabel("GamePic3");
+	static JLabel lbl_Pic4 = new JLabel("GamePic4");
+	static JLabel lbl_Pic5 = new JLabel("GamePic5");
+	static JLabel lbl_Pic6 = new JLabel("GamePic6");
+	static JLabel lbl_Pic7 = new JLabel("GamePic7");
+	static JLabel lbl_Pic8 = new JLabel("GamePic8");
+	static JLabel lbl_Pic9 = new JLabel("GamePic9");
+	
+	static JLabel lbl_Game1 = new JLabel("Game1");
+	static JLabel lbl_Game2 = new JLabel("Game2");
+	static JLabel lbl_Game3 = new JLabel("Game3");
+	static JLabel lbl_Game4 = new JLabel("Game4");
+	static JLabel lbl_Game5 = new JLabel("Game5");
+	static JLabel lbl_Game6 = new JLabel("Game6");
+	static JLabel lbl_Game7 = new JLabel("Game7");
+	static JLabel lbl_Game8 = new JLabel("Game8");
+	static JLabel lbl_Game9 = new JLabel("Game9");
+	
+	public void initialize() {
 		MainPage = new JFrame();
 		MainPage.setBounds(100, 100, 650, 1000);
 		MainPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -181,7 +199,7 @@ public class MainPage {
 		Main_panel.setLayout(null);
 		Main_panel.setPreferredSize(new Dimension(600,1000));
 		
-		JLabel lbl_Pic1 = new JLabel("GamePic1");
+		
 		lbl_Pic1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -195,7 +213,7 @@ public class MainPage {
 		lbl_Pic1.setBounds(25, 50, 150, 200); //position for display game
 		Main_panel.add(lbl_Pic1);
 		
-		JLabel lbl_Pic2 = new JLabel("GamePic2");
+
 		lbl_Pic2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -209,7 +227,7 @@ public class MainPage {
 		lbl_Pic2.setBounds(225, 50, 150, 200);//position for display game
 		Main_panel.add(lbl_Pic2);
 		
-		JLabel lbl_Pic3 = new JLabel("GamePic3");
+
 		lbl_Pic3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -223,7 +241,7 @@ public class MainPage {
 		lbl_Pic3.setBounds(425, 50, 150, 200);//position for display game
 		Main_panel.add(lbl_Pic3);
 		
-		JLabel lbl_Game1 = new JLabel("Game1");
+
 		lbl_Game1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -237,7 +255,7 @@ public class MainPage {
 		lbl_Game1.setBounds(25, 287, 150, 40);//position for display game
 		Main_panel.add(lbl_Game1);
 		
-		JLabel lbl_Game2 = new JLabel("Game2");
+
 		lbl_Game2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -251,7 +269,7 @@ public class MainPage {
 		lbl_Game2.setBounds(225, 287, 150, 40);//position for display game
 		Main_panel.add(lbl_Game2);
 		
-		JLabel lbl_Game3 = new JLabel("Game3");
+
 		lbl_Game3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -265,7 +283,7 @@ public class MainPage {
 		lbl_Game3.setBounds(425, 287, 150, 40);//position for display game
 		Main_panel.add(lbl_Game3);
 		
-		JLabel lbl_Pic4 = new JLabel("GamePic4");
+
 		lbl_Pic4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -279,7 +297,7 @@ public class MainPage {
 		lbl_Pic4.setBounds(25, 383, 150, 200);
 		Main_panel.add(lbl_Pic4);
 		
-		JLabel lbl_Pic5 = new JLabel("GamePic5");
+
 		lbl_Pic5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -293,7 +311,7 @@ public class MainPage {
 		lbl_Pic5.setBounds(225, 383, 150, 200);
 		Main_panel.add(lbl_Pic5);
 		
-		JLabel lbl_Pic6 = new JLabel("GamePic6");
+
 		lbl_Pic6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -307,7 +325,7 @@ public class MainPage {
 		lbl_Pic6.setBounds(425, 383, 150, 200);
 		Main_panel.add(lbl_Pic6);
 		
-		JLabel lbl_Game4 = new JLabel("Game4");
+
 		lbl_Game4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -321,7 +339,7 @@ public class MainPage {
 		lbl_Game4.setBounds(25, 620, 150, 40);
 		Main_panel.add(lbl_Game4);
 		
-		JLabel lbl_Game5 = new JLabel("Game5");
+	
 		lbl_Game5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -335,7 +353,7 @@ public class MainPage {
 		lbl_Game5.setBounds(225, 620, 150, 40);
 		Main_panel.add(lbl_Game5);
 		
-		JLabel lbl_Game6 = new JLabel("Game6");
+
 		lbl_Game6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -349,7 +367,7 @@ public class MainPage {
 		lbl_Game6.setBounds(425, 620, 150, 40);
 		Main_panel.add(lbl_Game6);
 		
-		JLabel lbl_Pic7 = new JLabel("GamePic7");
+
 		lbl_Pic7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -363,7 +381,7 @@ public class MainPage {
 		lbl_Pic7.setBounds(25, 716, 150, 200);
 		Main_panel.add(lbl_Pic7);
 		
-		JLabel lbl_Pic8 = new JLabel("GamePic8");
+
 		lbl_Pic8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -377,7 +395,7 @@ public class MainPage {
 		lbl_Pic8.setBounds(225, 716, 150, 200);
 		Main_panel.add(lbl_Pic8);
 		
-		JLabel lbl_Pic9 = new JLabel("GamePic9");
+
 		lbl_Pic9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -391,7 +409,7 @@ public class MainPage {
 		lbl_Pic9.setBounds(425, 716, 150, 200);
 		Main_panel.add(lbl_Pic9);
 		
-		JLabel lbl_Game7 = new JLabel("Game7");
+
 		lbl_Game7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -405,7 +423,7 @@ public class MainPage {
 		lbl_Game7.setBounds(25, 953, 150, 40);
 		Main_panel.add(lbl_Game7);
 		
-		JLabel lbl_Game8 = new JLabel("Game8");
+
 		lbl_Game8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -419,7 +437,7 @@ public class MainPage {
 		lbl_Game8.setBounds(225, 953, 150, 40);
 		Main_panel.add(lbl_Game8);
 		
-		JLabel lbl_Game9 = new JLabel("Game9");
+		
 		lbl_Game9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -534,12 +552,124 @@ public class MainPage {
 	    }catch(Exception ex){
 	           JOptionPane.showMessageDialog(null, ex.getMessage());
 	            }
-		
+	    lbaction.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				Action();
+			}
+		});
+	    lbstory.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				RPG();
+			}
+		});
+	    lbsimulation.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				Simulation();
+			}
+		});
+	    lbgamehit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				HIT();
+			}
+		});
 	}
 
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		MainPage.setVisible(b);
+	}
+	
+	public static void Action() {
+		lbl_Game4.setVisible(false);
+		lbl_Game5.setVisible(false);
+		lbl_Game6.setVisible(false);
+		lbl_Game7.setVisible(false);
+		lbl_Game8.setVisible(false);
+		lbl_Game9.setVisible(false);
+		lbl_Pic4.setVisible(false);
+		lbl_Pic5.setVisible(false);
+		lbl_Pic6.setVisible(false);
+		lbl_Pic7.setVisible(false);
+		lbl_Pic8.setVisible(false);
+		lbl_Pic9.setVisible(false);
+		
+		lbl_Pic1.setBounds(25, 50, 150, 200);
+		lbl_Pic2.setBounds(225, 50, 150, 200);
+		lbl_Pic3.setBounds(425, 50, 150, 200);
+		lbl_Game1.setBounds(25, 287, 150, 40);
+		lbl_Game2.setBounds(225, 287, 150, 40);
+		lbl_Game3.setBounds(425, 287, 150, 40);
+	}
+	
+	public static void Simulation() {
+		lbl_Game4.setVisible(false);
+		lbl_Game5.setVisible(false);
+		lbl_Game6.setVisible(false);
+		lbl_Game1.setVisible(false);
+		lbl_Game2.setVisible(false);
+		lbl_Game3.setVisible(false);
+		lbl_Pic4.setVisible(false);
+		lbl_Pic5.setVisible(false);
+		lbl_Pic6.setVisible(false);
+		lbl_Pic1.setVisible(false);
+		lbl_Pic2.setVisible(false);
+		lbl_Pic3.setVisible(false);
+		
+		lbl_Pic7.setBounds(25, 50, 150, 200);
+		lbl_Pic8.setBounds(225, 50, 150, 200);
+		lbl_Pic9.setBounds(425, 50, 150, 200);
+		lbl_Game7.setBounds(25, 287, 150, 40);
+		lbl_Game8.setBounds(225, 287, 150, 40);
+		lbl_Game9.setBounds(425, 287, 150, 40);
+	}
+	
+	public static void RPG() {
+		lbl_Game1.setVisible(false);
+		lbl_Game2.setVisible(false);
+		lbl_Game3.setVisible(false);
+		lbl_Game7.setVisible(false);
+		lbl_Game8.setVisible(false);
+		lbl_Game9.setVisible(false);
+		lbl_Pic1.setVisible(false);
+		lbl_Pic2.setVisible(false);
+		lbl_Pic3.setVisible(false);
+		lbl_Pic7.setVisible(false);
+		lbl_Pic8.setVisible(false);
+		lbl_Pic9.setVisible(false);
+		
+		lbl_Pic4.setBounds(25, 50, 150, 200);
+		lbl_Pic5.setBounds(225, 50, 150, 200);
+		lbl_Pic6.setBounds(425, 50, 150, 200);
+		lbl_Game4.setBounds(25, 287, 150, 40);
+		lbl_Game5.setBounds(225, 287, 150, 40);
+		lbl_Game6.setBounds(425, 287, 150, 40);
+	}
+	
+	public static void HIT() {
+		
+		lbl_Pic3.setBounds(25, 50, 150, 200);
+		lbl_Pic2.setBounds(225, 50, 150, 200);
+		lbl_Pic4.setBounds(425, 50, 150, 200);
+		lbl_Game3.setBounds(25, 287, 150, 40); 
+		lbl_Game2.setBounds(225, 287, 150, 40);
+		lbl_Game4.setBounds(425, 287, 150, 40);
+		lbl_Pic5.setBounds(25, 383, 150, 200);
+		lbl_Pic1.setBounds(225, 383, 150, 200);
+		lbl_Pic7.setBounds(425, 383, 150, 200);
+		lbl_Game5.setBounds(25, 620, 150, 40);
+		lbl_Game1.setBounds(225, 620, 150, 40);
+		lbl_Game7.setBounds(425, 620, 150, 40);
+		lbl_Pic9.setBounds(25, 716, 150, 200);
+		lbl_Pic6.setBounds(225, 716, 150, 200);
+		lbl_Pic8.setBounds(425, 716, 150, 200);
+		lbl_Game9.setBounds(25, 953, 150, 40);
+		lbl_Game6.setBounds(225, 953, 150, 40);
+		lbl_Game8.setBounds(425, 953, 150, 40);
+		
 	}
 
 }

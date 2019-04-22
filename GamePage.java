@@ -176,23 +176,59 @@ public class GamePage{
 		Head_panel.add(lbmain);
 		
 		JLabel lbgamehit = new JLabel("");
+		lbgamehit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
+				GamePage.setVisible(false);	
+				MainPage.HIT();
+			}
+		});
 		lbgamehit.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png")));
 		lbgamehit.setBounds(218, 161, 200, 50);
 		Head_panel.add(lbgamehit);
 		
 		JLabel lbstory = new JLabel("");
+		lbstory.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
+				GamePage.setVisible(false);	
+				MainPage.RPG();
+			}
+		});
 		lbstory.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21story.png")));
 		lbstory.setBounds(428, 213, 200, 50);
 		lbstory.setVisible(false);
 		Head_panel.add(lbstory);
 		
 		JLabel lbaction = new JLabel("");
+		lbaction.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
+				GamePage.setVisible(false);	
+				MainPage.Action();
+			}
+		});
 		lbaction.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
 		lbaction.setBounds(428, 265, 200, 50);
 		lbaction.setVisible(false);
 		Head_panel.add(lbaction);
 		
 		JLabel lbsimulation = new JLabel("");
+		lbsimulation.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
+				GamePage.setVisible(false);	
+				MainPage.Simulation();
+			}
+		});
 		lbsimulation.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
 		lbsimulation.setBounds(428, 317, 200, 50);
 		lbsimulation.setVisible(false);
