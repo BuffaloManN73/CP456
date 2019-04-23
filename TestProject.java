@@ -12,7 +12,6 @@ class TestProject {
 		String username = "test";
 		String password = "test";
 		
-		
 		LoginPage.textFieldusername.setText(username);
 		LoginPage.textFieldpassword.setText(password);
 		//LoginPage.btnLogin.doClick();
@@ -22,8 +21,7 @@ class TestProject {
 		//assertEquals(true,username.equals("test"));
 		//assertEquals(true,LoginPage.textFieldusername.getText().equals("test"));
 	}
-	
-	
+	@Test
 	void testregistersuccess() {
 		/*for (int i = 20; i > 0; i++) {
 			String test = Integer.toString(i);
@@ -32,12 +30,10 @@ class TestProject {
 			String email = test;
 			String phone = test;
 		}*/
-		String username = "test4";
+		String username = "test7";
 		String password = "test4";
 		String email = "test4";
 		String phone = "0852542365";
-		
-		
 		
 		RegisterPage.textFieldUsername.setText(username);
 		RegisterPage.textFieldPassword.setText(password);
@@ -49,15 +45,6 @@ class TestProject {
 		assertEquals(true,LoginPage.frmLogin.isVisible());
 		
 	}
-	/*
-	void testLoginPageform() {
-
-		LoginPage.main(null);
-		//assertEquals(true,LoginPage.frmLogin);
-		assertEquals(true,LoginPage.frmLogin.isVisible());
-		//assertEquals(1,LoginPage.frame);
-	}
-	*/
 	@Test
 	void testSearchGame() {
 		MainPage.txt_Search.setText("Farcry");
@@ -71,7 +58,7 @@ class TestProject {
 		MainPage.txt_Search.setText("GTA V");
 		MainPage.search(MainPage.txt_Search.getText());
 		assertEquals("3",MainPage.ID);
-
+		
 		MainPage.txt_Search.setText("Stardew Valley");
 		MainPage.search(MainPage.txt_Search.getText());
 		assertEquals("4",MainPage.ID);
@@ -96,8 +83,52 @@ class TestProject {
 		MainPage.search(MainPage.txt_Search.getText());
 		assertEquals("9",MainPage.ID);
 	}
+	@Test
+	void testHeaderFunction() {
+		MainPage.Action();
+		assertEquals(25,MainPage.lbl_Pic1.getLocation().getX());
+		assertEquals(50,MainPage.lbl_Pic1.getLocation().getY());
 		
+		MainPage.Simulation(); 
+		assertEquals(25,MainPage.lbl_Pic7.getLocation().getX());
+		assertEquals(50,MainPage.lbl_Pic7.getLocation().getY());
+		
+		MainPage.RPG();
+		assertEquals(25,MainPage.lbl_Pic4.getLocation().getX());
+		assertEquals(50,MainPage.lbl_Pic4.getLocation().getY());
+		
+		MainPage.HIT();
+		assertEquals(25,MainPage.lbl_Pic3.getLocation().getX());
+		assertEquals(50,MainPage.lbl_Pic3.getLocation().getY());
+		
+		MainPage.MainMenu();
+		assertEquals(25,MainPage.lbl_Pic1.getLocation().getX());
+		assertEquals(50,MainPage.lbl_Pic1.getLocation().getY());	 
+	}
+	@Test
+	void testAddGame(){
+		MainPage.ID = "1";
+		GamePage.add();
+		assertEquals("1",GamePage.gameList.get(0));
+		GamePage.gameList.clear();
+	}
+	@Test
+	void testRemoveGame() {
+		GamePage.gameList.add("1");
+		BasketPage.chckbxGame1.setSelected(true);
+		BasketPage.remove();
+		assertEquals(true,GamePage.gameList.isEmpty());
+	}
+	/*
+	void testLoginPageform() {
 
+		LoginPage.main(null);
+		//assertEquals(true,LoginPage.frmLogin);
+		assertEquals(true,LoginPage.frmLogin.isVisible());
+		//assertEquals(1,LoginPage.frame);
+	}
+	*/
+	/*
 	@Test
 	void testBasketPage() {
 		GamePage.gameList.add("1");
@@ -112,30 +143,10 @@ class TestProject {
 		GamePage.gameList.add("5");
 		assertEquals(true,BasketPage2.chckbxGame2.isVisible());
 		GamePage.gameList.add("6");
-		assertEquals(true,BasketPage2.chckbxGame3.isVisible());
-
-		
+		assertEquals(true,BasketPage2.chckbxGame3.isVisible());	
 	}
-	@Test
-	void testHeader() {
-		MainPage.Action();
-		assertEquals(25,MainPage.lbl_Pic1.getLocation().getX());
-		assertEquals(50,MainPage.lbl_Pic1.getLocation().getY());
-		MainPage.Simulation(); 
-		assertEquals(25,MainPage.lbl_Pic7.getLocation().getX());
-		assertEquals(50,MainPage.lbl_Pic7.getLocation().getY());
-		MainPage.RPG();
-		assertEquals(25,MainPage.lbl_Pic4.getLocation().getX());
-		assertEquals(50,MainPage.lbl_Pic4.getLocation().getY());
-		MainPage.HIT();
-		assertEquals(25,MainPage.lbl_Pic3.getLocation().getX());
-		assertEquals(50,MainPage.lbl_Pic3.getLocation().getY());
-		MainPage.MainMenu();
-		assertEquals(25,MainPage.lbl_Pic1.getLocation().getX());
-		assertEquals(50,MainPage.lbl_Pic1.getLocation().getY());
-		 
-	}
-
+	*/
+	
 	/*
 	@Test
 	void testAddArray() {

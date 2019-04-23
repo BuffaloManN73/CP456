@@ -355,14 +355,9 @@ public class GamePage{
 		btnAdd.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (gameList.size() < 3){
-					gameList.add(MainPage.ID);
-					JOptionPane.showMessageDialog(null, "Added!!");
-					//System.out.print(gameList);
-			}else {
-					JOptionPane.showMessageDialog(null, "Can't do that!!");
+				add();
 			}
-			}
+
 		});
 		
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 18));
@@ -419,5 +414,15 @@ public class GamePage{
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		GamePage.setVisible(b);
+	}
+	public static void add() {
+		if (gameList.size() < 3){
+			gameList.add(MainPage.ID);
+			JOptionPane.showMessageDialog(null, "Added!!");
+			//System.out.print(gameList);
+	}else {
+			JOptionPane.showMessageDialog(null, "Can't do that!!");
+	}
+	
 	}
 }

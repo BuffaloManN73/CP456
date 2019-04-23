@@ -37,7 +37,7 @@ public class BasketPage {
 	       }
 
 	   }
-	static JFrame BasketPage; 
+	static JFrame BasketPage = new JFrame(); 
 
 	/**
 	 * Launch the application.
@@ -86,7 +86,7 @@ public class BasketPage {
 	}
 	
 	private void initialize() {
-
+		JFrame BasketPage = new JFrame();
 		BasketPage.setBounds(100, 100, 700, 500);
 		BasketPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -255,20 +255,7 @@ public class BasketPage {
 		    lbremove.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					if (chckbxGame1.isSelected() && GamePage.gameList.size()>=1) {
-						JOptionPane.showMessageDialog(null, "Delete1!!");
-						GamePage.gameList.remove(0);
-				        
-					}
-					if (chckbxGame2.isSelected()&& GamePage.gameList.size()>=2 ) {
-						JOptionPane.showMessageDialog(null, "Delete2!!");
-						GamePage.gameList.remove(1);
-						
-					}
-					if (chckbxGame3.isSelected()&& GamePage.gameList.size()==3 ) {
-						JOptionPane.showMessageDialog(null, "Delete3!!");
-						GamePage.gameList.remove(2);
-					}
+					remove();
 					refresh();
 				}
 			});
@@ -367,21 +354,7 @@ public class BasketPage {
 		    lbremove.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					if (chckbxGame1.isSelected() && GamePage.gameList.size()>=1) {
-						JOptionPane.showMessageDialog(null, "Delete2.111!!");
-						GamePage.gameList.remove(0);
-						lblPicture1.setIcon(lblPicture1.getIcon());
-					}
-					if (chckbxGame2.isSelected()&& GamePage.gameList.size()>=2 ) {
-						JOptionPane.showMessageDialog(null, "Delete2.2!!");
-						GamePage.gameList.remove(1);
-						//Game1.updateUI();	
-					}
-					if (chckbxGame3.isSelected()&& GamePage.gameList.size()==3 ) {
-						JOptionPane.showMessageDialog(null, "Delete3!!");
-						GamePage.gameList.remove(2);
-						//Game1.updateUI();	
-					}
+					remove();
 					refresh();
 				}
 			});
@@ -525,20 +498,7 @@ public class BasketPage {
 		    lbremove.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					if (chckbxGame1.isSelected() && GamePage.gameList.size()>=1) {
-						JOptionPane.showMessageDialog(null, "Delete1!!");
-						GamePage.gameList.remove(0);
-
-					}
-					if (chckbxGame2.isSelected()&& GamePage.gameList.size()>=2 ) {
-						JOptionPane.showMessageDialog(null, "Delete2!!");
-						GamePage.gameList.remove(1);
-					}
-					if (chckbxGame3.isSelected()&& GamePage.gameList.size()==3 ) {
-						JOptionPane.showMessageDialog(null, "Delete3!!");
-						GamePage.gameList.remove(2);
-
-					}
+					remove();
 					refresh();
 				}
 			});
@@ -571,6 +531,23 @@ public class BasketPage {
 	}public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		BasketPage.setVisible(b);
+		
+	}
+	public static void remove() {
+		if (chckbxGame1.isSelected() && GamePage.gameList.size()>=1) {
+			JOptionPane.showMessageDialog(null, "Delete1!!");
+			GamePage.gameList.remove(0);
+
+		}
+		if (chckbxGame2.isSelected()&& GamePage.gameList.size()>=2 ) {
+			JOptionPane.showMessageDialog(null, "Delete2!!");
+			GamePage.gameList.remove(1);
+		}
+		if (chckbxGame3.isSelected()&& GamePage.gameList.size()==3 ) {
+			JOptionPane.showMessageDialog(null, "Delete3!!");
+			GamePage.gameList.remove(2);
+
+		}
 		
 	}
 }
