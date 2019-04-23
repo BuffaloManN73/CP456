@@ -36,7 +36,7 @@ public class MainPage {
 	           return rs;
 	       }
 	      
-	   }
+	   } 
 
 	private static JFrame MainPage;
 

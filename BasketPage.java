@@ -35,10 +35,9 @@ public class BasketPage {
 	           }
 	           return rs;
 	       }
-	        
-	   }
 
-	private JFrame BasketPage;
+	   }
+	private JFrame BasketPage; 
 
 	/**
 	 * Launch the application.

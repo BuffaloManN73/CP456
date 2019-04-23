@@ -22,11 +22,11 @@ import java.awt.event.MouseEvent;
 
 public class RegisterPage {
 
-	private JFrame frmAppbuysteam;
-	private JTextField textFieldUsername;
-	private JTextField textFieldPassword;
-	private JTextField textFieldemail;
-	private JTextField textFielphone;
+	static JFrame frmAppbuysteam;
+	static JTextField textFieldUsername;
+	static JTextField textFieldPassword;
+	static JTextField textFieldemail;
+	static JTextField textFielphone;
 
 	/**
 	 * Launch the application.
@@ -41,8 +41,8 @@ public class RegisterPage {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
+		}); 
+	} 
 
 	
 	 public class Function{

@@ -28,7 +28,7 @@ public class header {
 				}
 			}
 		});
-	}
+	} 
 
 	/**
 	 * Create the application.

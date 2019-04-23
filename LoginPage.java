@@ -21,9 +21,10 @@ import java.awt.event.ActionEvent;
 
 public class LoginPage {
 
-	private JFrame frmLogin;
-	private JTextField textFieldusername;
-	private JTextField textFieldpassword;
+	public static JFrame frmLogin;
+	public static JTextField textFieldusername = new JTextField();
+	public static JTextField textFieldpassword = new JTextField();
+	public static JButton btnLogin = new JButton("Confirm");
 
 	/**
 	 * Launch the application.
@@ -37,11 +38,11 @@ public class LoginPage {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
+			}  
 		});
 	}
-
-	 public class Function{
+ 
+	 public static class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
 	       PreparedStatement ps = null;
@@ -63,11 +64,50 @@ public class LoginPage {
 	/**
 	 * Create the application.
 	 */
+	static String[] username = {""} ;
+	
+	public static void login() {
+		
+		Function f = new Function();
+	    ResultSet rs = null;
+	    
+	    try{
+		      if(textFieldusername.getText().equals("") || textFieldpassword.getText().equals("")){
+		    	  JOptionPane.showMessageDialog(null, "Write username and password pls");
+		      }else{
+		    	  rs = f.find(textFieldusername.getText()); 
+		    	  if(rs.next()){
+			    	  if(textFieldpassword.getText().equals(rs.getString("password"))) {
+			    		  username[0] =  textFieldusername.getText();
+			    		  JOptionPane.showMessageDialog(null, "Login Success");
+			    		  
+			    		
+			    		  
+							MainPage mainpage = new MainPage();
+							mainpage.setVisible(true);
+							frmLogin.setVisible(false);
+			    		  
+			    	  }else {
+			    		  JOptionPane.showMessageDialog(null, "Wrong Password");
+			    	  }
+			      }  else{
+			          JOptionPane.showMessageDialog(null, "No data for this account");
+			      }
+		      }
+		    }catch(Exception ex){
+		           JOptionPane.showMessageDialog(null, "s");
+		            }
+	} 
+	 
+	 
 	public LoginPage() {
 		initialize();
 	}
 	
-	static String[] username = {""} ;
+	
+	
+	
+
 	
 	//public void storeusername (String a) {
 	//	username[0] = "asss";
@@ -88,12 +128,12 @@ public class LoginPage {
 		lblNewLabel.setBounds(164, 13, 300, 150);
 		frmLogin.getContentPane().add(lblNewLabel);
 		
-		textFieldusername = new JTextField();
+		 
 		textFieldusername.setBounds(269, 246, 241, 34);
 		frmLogin.getContentPane().add(textFieldusername);
 		textFieldusername.setColumns(10);
 		
-		textFieldpassword = new JTextField();
+		
 		textFieldpassword.setColumns(10);
 		textFieldpassword.setBounds(269, 303, 241, 34);
 		frmLogin.getContentPane().add(textFieldpassword);
@@ -113,36 +153,10 @@ public class LoginPage {
 		lblPassword.setBounds(110, 299, 153, 43);
 		frmLogin.getContentPane().add(lblPassword);
 		
-		JButton btnLogin = new JButton("Confirm");
+		
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Function f = new Function();
-			    ResultSet rs = null;
-			    try{
-				      if(textFieldusername.getText().equals("") || textFieldpassword.getText().equals("")){
-				    	  JOptionPane.showMessageDialog(null, "Write username and password pls");
-				      }else{
-				    	  rs = f.find(textFieldusername.getText());
-				    	  if(rs.next()){
-					    	  if(textFieldpassword.getText().equals(rs.getString("password"))) {
-					    		  username[0] =  textFieldusername.getText();
-					    		  JOptionPane.showMessageDialog(null, "Login Success");
-					    		  System.out.print(username[0]);
-					    		  
-									MainPage mainpage = new MainPage();
-									mainpage.setVisible(true);
-									frmLogin.setVisible(false);
-					    		  
-					    	  }else {
-					    		  JOptionPane.showMessageDialog(null, "Wrong Password");
-					    	  }
-					      }  else{
-					          JOptionPane.showMessageDialog(null, "No data for this account");
-					      }
-				      }
-				    }catch(Exception ex){
-				           JOptionPane.showMessageDialog(null, "s");
-				            }
+				login();
 			}
 		});
 		btnLogin.setBounds(142, 388, 146, 34);
