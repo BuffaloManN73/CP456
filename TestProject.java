@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /*import org.junit.runner.*;
 @RunWith(JUnit5.class)*/
 class TestProject {
-	@Test
+	//@Test
 	void testloginsuccess() {
 		String username = "test";
 		String password = "test";
@@ -15,7 +15,6 @@ class TestProject {
 		
 		LoginPage.textFieldusername.setText(username);
 		LoginPage.textFieldpassword.setText(password);
-
 		//LoginPage.btnLogin.doClick();
 		LoginPage.login();
 		assertEquals(true,LoginPage.username[0].equals("test"));
@@ -24,20 +23,42 @@ class TestProject {
 		//assertEquals(true,LoginPage.textFieldusername.getText().equals("test"));
 	}
 	
-	
+	//@Test
 	void testregistersuccess() {
-		String username = "test1";
-		String password = "test1";
-		String email = "test1";
+		/*for (int i = 20; i > 0; i++) {
+			String test = Integer.toString(i);
+			String username = test;
+			String password = test;
+			String email = test;
+			String phone = test;
+		}*/
+		String username = "test2";
+		String password = "test2";
+		String email = "test2";
 		String phone = "0852542365";
+		
+		
 		
 		RegisterPage.textFieldUsername.setText(username);
 		RegisterPage.textFieldPassword.setText(password);
-		LoginPage.btnLogin.doClick();
-		assertEquals("test",LoginPage.username[0]);
+		RegisterPage.textFieldemail.setText(email);
+		RegisterPage.textFielphone.setText(phone);
+		RegisterPage.register();
+		
+		//LoginPage.btnLogin.doClick();
+		assertEquals(1,RegisterPage.reg);
 	}
-	 
-	 
+	@Test
+	void testLoginPageform() {
+
+		LoginPage.main(null);
+
+		
+		//assertEquals(true,LoginPage.frmLogin);
+		assertEquals(true,LoginPage.frmLogin.isVisible());
+		//assertEquals(1,LoginPage.frame);
+	}
+
 	/*
 	@Test
 	void testAddArray() {

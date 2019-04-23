@@ -74,11 +74,11 @@ public class header {
 		lbgamehit.setBounds(218, 161, 200, 50);
 		frmAppreviewgame.getContentPane().add(lbgamehit);
 		
-		JLabel lbstory = new JLabel("");
-		lbstory.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21story.png")));
-		lbstory.setBounds(428, 213, 200, 50);
-		lbstory.setVisible(false);
-		frmAppreviewgame.getContentPane().add(lbstory);
+		JLabel lbrpg = new JLabel("");
+		lbrpg.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21rpg.png")));
+		lbrpg.setBounds(428, 213, 200, 50);
+		lbrpg.setVisible(false);
+		frmAppreviewgame.getContentPane().add(lbrpg);
 		
 		JLabel lbaction = new JLabel("");
 		lbaction.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
@@ -131,12 +131,12 @@ public class header {
 			public void mouseClicked(MouseEvent e) {
 				if(i == 0){
 					lbaction.setVisible(true);
-					lbstory.setVisible(true);
+					lbrpg.setVisible(true);
 					lbsimulation.setVisible(true);
 					i = 1;
 				}else {
 					lbaction.setVisible(false);
-					lbstory.setVisible(false);
+					lbrpg.setVisible(false);
 					lbsimulation.setVisible(false);
 					i = 0;
 				}

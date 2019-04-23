@@ -21,11 +21,12 @@ import java.awt.event.ActionEvent;
 
 public class LoginPage {
 
-	public static JFrame frmLogin;
+	public static JFrame frmLogin = new JFrame();
 	public static JTextField textFieldusername = new JTextField();
 	public static JTextField textFieldpassword = new JTextField();
-	public static JButton btnLogin = new JButton("Confirm");
-
+	public static JButton btnLogin = new JButton("");
+	public static int log =0;
+	//public static int frame = 0;
 	/**
 	 * Launch the application.
 	 */
@@ -34,7 +35,8 @@ public class LoginPage {
 			public void run() {
 				try {
 					LoginPage window = new LoginPage();
-					window.frmLogin.setVisible(true);
+					window.setVisible(true);
+					//frame = 1;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -79,14 +81,7 @@ public class LoginPage {
 		    	  if(rs.next()){
 			    	  if(textFieldpassword.getText().equals(rs.getString("password"))) {
 			    		  username[0] =  textFieldusername.getText();
-			    		  JOptionPane.showMessageDialog(null, "Login Success");
-			    		  
-			    		
-			    		  
-							MainPage mainpage = new MainPage();
-							mainpage.setVisible(true);
-							frmLogin.setVisible(false);
-			    		  
+			    		 log = 1;
 			    	  }else {
 			    		  JOptionPane.showMessageDialog(null, "Wrong Password");
 			    	  }
@@ -117,7 +112,7 @@ public class LoginPage {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmLogin = new JFrame();
+		
 		frmLogin.setTitle("AppBuySteam");
 		frmLogin.setBounds(100, 100, 650, 500);
 		frmLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -152,17 +147,32 @@ public class LoginPage {
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblPassword.setBounds(110, 299, 153, 43);
 		frmLogin.getContentPane().add(lblPassword);
+		btnLogin.setIcon(new ImageIcon(LoginPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21confirm.png")));
 		
 		
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				login();
+				if (log == 1) {
+					 JOptionPane.showMessageDialog(null, "Login Success");	
+		    		  MainPage mainpage = new MainPage();
+						mainpage.setVisible(true);
+						frmLogin.setVisible(false);
+				}
 			}
 		});
-		btnLogin.setBounds(142, 388, 146, 34);
+		btnLogin.setBounds(75, 382, 233, 59);
+		btnLogin.setOpaque(false);
+		btnLogin.setContentAreaFilled(false);
+		btnLogin.setBorderPainted(false);
 		frmLogin.getContentPane().add(btnLogin);
 		
-		JButton btnRegister = new JButton("Register");
+		JButton btnRegister = new JButton("");
+		btnRegister.setIcon(new ImageIcon(LoginPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21resgisterpng.png")));
+		btnRegister.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnRegister.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
@@ -172,7 +182,10 @@ public class LoginPage {
 			}
 		});
 
-		btnRegister.setBounds(336, 388, 146, 34);
+		btnRegister.setBounds(333, 382, 233, 59);
+		btnRegister.setOpaque(false);
+		btnRegister.setContentAreaFilled(false);
+		btnRegister.setBorderPainted(false);
 		frmLogin.getContentPane().add(btnRegister);
 	}
 

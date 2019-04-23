@@ -144,18 +144,23 @@ public class BasketPage {
 		Game3.add(lblName3);
 		
 		JLabel lbremove = new JLabel("");
-		lbremove.setBounds(253, 391, 200, 50);
+		lbremove.setBounds(246, 391, 200, 50);
 		lbremove.setIcon(new ImageIcon(BasketPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21remove.png")));
 		BasketPage.getContentPane().add(lbremove);
 		
 		
 		
 		JLabel lbback = new JLabel("");
-		lbback.setBounds(43, 391, 200, 50);
+		lbback.setBounds(33, 391, 200, 50);
 		lbback.setIcon(new ImageIcon(BasketPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
 		BasketPage.getContentPane().add(lbback);
 		
-		JButton btn_Confirm = new JButton("Confirm");
+		JButton btn_Confirm = new JButton("");
+		btn_Confirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btn_Confirm.setIcon(new ImageIcon(BasketPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21confirm.png")));
 
 		btn_Confirm.addMouseListener(new MouseAdapter() {
 			@Override
@@ -170,8 +175,11 @@ public class BasketPage {
 				
 			}
 		});
-		btn_Confirm.setBounds(519, 403, 89, 23);
+		btn_Confirm.setBounds(446, 382, 212, 59);
 		BasketPage.getContentPane().add(btn_Confirm);
+		btn_Confirm.setOpaque(false);
+		btn_Confirm.setContentAreaFilled(false);
+		btn_Confirm.setBorderPainted(false);
 		
 		lbback.addMouseListener(new MouseAdapter() {
 			@Override

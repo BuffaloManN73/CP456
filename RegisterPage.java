@@ -22,11 +22,14 @@ import java.awt.event.MouseEvent;
 
 public class RegisterPage {
 
+
 	static JFrame frmAppbuysteam;
-	static JTextField textFieldUsername;
-	static JTextField textFieldPassword;
-	static JTextField textFieldemail;
-	static JTextField textFielphone;
+	static JTextField textFieldUsername = new JTextField();
+	static JTextField textFieldPassword = new JTextField();
+	static JTextField textFieldemail = new JTextField();
+	static JTextField textFielphone = new JTextField();
+	
+	static int reg = 0;
 
 	/**
 	 * Launch the application.
@@ -45,7 +48,7 @@ public class RegisterPage {
 	} 
 
 	
-	 public class Function{
+	 public static class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
 	       PreparedStatement ps = null;
@@ -67,6 +70,38 @@ public class RegisterPage {
 	/**
 	 * Create the application.
 	 */
+	public static void register() {
+		try {
+			Function f = new Function();
+		    //ResultSet rs = null;
+		    Connection con = null;
+		    PreparedStatement ps = null;
+		    con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
+			String query = "insert into user (username,password,email,phone) values (?,?,?,?)";
+		    //String query = "insert into 'user` (`username`, `password`, `email`, `phone`) VALUES ('?', '?', '?', '?')";
+			PreparedStatement pst = con.prepareStatement(query);
+			
+			if(textFieldUsername.getText().equals("") || textFieldPassword.getText().equals("") || textFieldemail.getText().equals("") || textFielphone.getText().equals("")){
+				JOptionPane.showMessageDialog(null, "Fill all information pls");
+			}else {
+				pst.setString(1, textFieldUsername.getText());
+				pst.setString(2, textFieldPassword.getText());
+				pst.setString(3, textFieldemail.getText());
+				pst.setString(4, textFielphone.getText());
+				
+				pst.execute();
+				reg = 1;
+			}
+			//rs = pst.executeQuery();
+
+			//ResultSet rs = pst.executeQuery();
+			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "username have already");
+		}
+	}
+	
+	 
 	public RegisterPage() {
 		initialize();
 	}
@@ -96,7 +131,7 @@ public class RegisterPage {
 		lblUsername.setBounds(123, 242, 198, 43);
 		frmAppbuysteam.getContentPane().add(lblUsername);
 		
-		textFieldUsername = new JTextField();
+		
 		textFieldUsername.setColumns(10);
 		textFieldUsername.setBounds(282, 248, 241, 34);
 		frmAppbuysteam.getContentPane().add(textFieldUsername);
@@ -106,7 +141,7 @@ public class RegisterPage {
 		lblPassword.setBounds(123, 298, 198, 43);
 		frmAppbuysteam.getContentPane().add(lblPassword);
 		
-		textFieldPassword = new JTextField();
+		
 		textFieldPassword.setColumns(10);
 		textFieldPassword.setBounds(282, 302, 241, 34);
 		frmAppbuysteam.getContentPane().add(textFieldPassword);
@@ -116,7 +151,7 @@ public class RegisterPage {
 		lblEmail.setBounds(123, 354, 198, 43);
 		frmAppbuysteam.getContentPane().add(lblEmail);
 		
-		textFieldemail = new JTextField();
+		
 		textFieldemail.setColumns(10);
 		textFieldemail.setBounds(282, 360, 241, 34);
 		frmAppbuysteam.getContentPane().add(textFieldemail);
@@ -126,12 +161,13 @@ public class RegisterPage {
 		lblPhone.setBounds(123, 410, 125, 43);
 		frmAppbuysteam.getContentPane().add(lblPhone);
 		
-		textFielphone = new JTextField();
+		
 		textFielphone.setColumns(10);
 		textFielphone.setBounds(282, 414, 241, 34);
 		frmAppbuysteam.getContentPane().add(textFielphone);
 		
-		JButton btnBack = new JButton("Back");
+		JButton btnBack = new JButton("");
+		btnBack.setIcon(new ImageIcon(RegisterPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21back.png")));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LoginPage logpage = new LoginPage();
@@ -139,53 +175,30 @@ public class RegisterPage {
 				frmAppbuysteam.setVisible(false);
 			}
 		});
-		btnBack.setBounds(178, 487, 97, 25);
+		btnBack.setBounds(57, 487, 263, 59);
+		btnBack.setOpaque(false);
+		btnBack.setContentAreaFilled(false);
+		btnBack.setBorderPainted(false);
 		frmAppbuysteam.getContentPane().add(btnBack);
 		
-		JButton btnConfirm = new JButton("Confirm");
+		JButton btnConfirm = new JButton("");
+		btnConfirm.setIcon(new ImageIcon(RegisterPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21confirm.png")));
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			try {
-				Function f = new Function();
-			    //ResultSet rs = null;
-			    Connection con = null;
-			    PreparedStatement ps = null;
-			    con = DriverManager.getConnection("jdbc:mysql://localhost/game","root","");
-				String query = "insert into user (username,password,email,phone) values (?,?,?,?)";
-			    //String query = "insert into 'user` (`username`, `password`, `email`, `phone`) VALUES ('?', '?', '?', '?')";
-				PreparedStatement pst = con.prepareStatement(query);
-				
-				if(textFieldUsername.getText().equals("") || textFieldPassword.getText().equals("") || textFieldemail.getText().equals("") || textFielphone.getText().equals("")){
-					JOptionPane.showMessageDialog(null, "Fill all information pls");
-				}else {
-					pst.setString(1, textFieldUsername.getText());
-					pst.setString(2, textFieldPassword.getText());
-					pst.setString(3, textFieldemail.getText());
-					pst.setString(4, textFielphone.getText());
-					
-					pst.execute();
-					
-					JOptionPane.showMessageDialog(null, "Register Success");
-					LoginPage logpage = new LoginPage();
-					logpage.setVisible(true);
-					frmAppbuysteam.setVisible(false);
+				register();
+			if (reg ==1) {
+				JOptionPane.showMessageDialog(null, "Register Success");
+				LoginPage logpage = new LoginPage();
+				logpage.setVisible(true);
+				frmAppbuysteam.setVisible(false);
 				}
-
-			
-				//rs = pst.executeQuery();
-
-				//ResultSet rs = pst.executeQuery();
-				
-				
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Fail");
-			}
+			reg = 0;
 			}
 		});
-		
-		
-		
-		btnConfirm.setBounds(364, 487, 97, 25);
+		btnConfirm.setOpaque(false);
+		btnConfirm.setContentAreaFilled(false);
+		btnConfirm.setBorderPainted(false);
+		btnConfirm.setBounds(332, 487, 281, 59);
 		frmAppbuysteam.getContentPane().add(btnConfirm);
 		
 	}

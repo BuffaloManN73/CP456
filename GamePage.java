@@ -203,8 +203,8 @@ public class GamePage{
 		lbgamehit.setBounds(218, 161, 200, 50);
 		Head_panel.add(lbgamehit);
 		
-		JLabel lbstory = new JLabel("");
-		lbstory.addMouseListener(new MouseAdapter() {
+		JLabel lbrpg = new JLabel("");
+		lbrpg.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				MainPage mainpage = new MainPage();
@@ -213,10 +213,10 @@ public class GamePage{
 				MainPage.RPG();
 			}
 		});
-		lbstory.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21story.png")));
-		lbstory.setBounds(428, 213, 200, 50);
-		lbstory.setVisible(false);
-		Head_panel.add(lbstory);
+		lbrpg.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21rpg.png")));
+		lbrpg.setBounds(428, 213, 200, 50);
+		lbrpg.setVisible(false);
+		Head_panel.add(lbrpg);
 		
 		JLabel lbaction = new JLabel("");
 		lbaction.addMouseListener(new MouseAdapter() {
@@ -286,12 +286,12 @@ public class GamePage{
 				
 				if(i  == 0){
 					lbaction.setVisible(true);
-					lbstory.setVisible(true);
+					lbrpg.setVisible(true);
 					lbsimulation.setVisible(true);
 					i = 1;
 				}else {
 					lbaction.setVisible(false);
-					lbstory.setVisible(false);
+					lbrpg.setVisible(false);
 					lbsimulation.setVisible(false);
 					i = 0;
 				}
