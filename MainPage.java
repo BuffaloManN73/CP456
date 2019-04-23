@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 
 public class MainPage {
 	int i = 0;
-	public class Function{
+	public static class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
 	       PreparedStatement ps = null;
@@ -38,7 +38,7 @@ public class MainPage {
 	      
 	   } 
 
-	private static JFrame MainPage;
+	public static JFrame MainPage = new JFrame();;
 
 	/**
 	 * Launch the application.
@@ -87,27 +87,28 @@ public class MainPage {
 	static JLabel lbl_Game7 = new JLabel("Game7");
 	static JLabel lbl_Game8 = new JLabel("Game8");
 	static JLabel lbl_Game9 = new JLabel("Game9");
-	private JTextField txt_Search;
+	static JTextField txt_Search = new JTextField();
+	static JPanel Head_panel = new JPanel();
 	
 	public void initialize() {
-		MainPage = new JFrame();
+		MainPage.setTitle("appbuygame");
+		
 		MainPage.setBounds(100, 100, 650, 1000);
 		MainPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		MainPage.getContentPane().setLayout(null);
 		
-		JPanel Head_panel = new JPanel();
+		
 		Head_panel.setBounds(0, 0, 634, 410);
 		MainPage.getContentPane().add(Head_panel);
 		Head_panel.setOpaque(false);
 		Head_panel.setLayout(null);
 		
-		txt_Search = new JTextField();
 		txt_Search.setBounds(355, 70, 260, 33);
 		Head_panel.add(txt_Search);
 		txt_Search.setColumns(10);
 		
 		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
+		lblLogo.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/logo.png")));
 		lblLogo.setBounds(0, 0, 300, 150);
 		Head_panel.add(lblLogo);
 		
@@ -118,7 +119,7 @@ public class MainPage {
 				search(txt_Search.getText());
 			}
 		});
-		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
+		lblNewLabel.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/search.png")));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(288, 64, 340, 45);
 		Head_panel.add(lblNewLabel);
@@ -130,12 +131,12 @@ public class MainPage {
 				MainMenu();
 			}
 		});
-		lbmain.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
+		lbmain.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
 		lbmain.setBounds(8, 161, 200, 50);
 		Head_panel.add(lbmain);
 		
 		JLabel lbgamehit = new JLabel("");
-		lbgamehit.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png")));
+		lbgamehit.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png")));
 		lbgamehit.setBounds(218, 161, 200, 50);
 		Head_panel.add(lbgamehit);
 		
@@ -146,19 +147,19 @@ public class MainPage {
 		Head_panel.add(lbrpg);
 		
 		JLabel lbaction = new JLabel("");
-		lbaction.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
+		lbaction.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
 		lbaction.setBounds(428, 265, 200, 50);
 		lbaction.setVisible(false);
 		Head_panel.add(lbaction);
 		
 		JLabel lbsimulation = new JLabel("");
-		lbsimulation.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
+		lbsimulation.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
 		lbsimulation.setBounds(428, 317, 200, 50);
 		lbsimulation.setVisible(false);
 		Head_panel.add(lbsimulation);
 		
 		JLabel lbtype = new JLabel("");
-		lbtype.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
+		lbtype.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
 		lbtype.setBounds(428, 161, 200, 50);
 		Head_panel.add(lbtype);
 		
@@ -172,7 +173,7 @@ public class MainPage {
 			}
 		});
 		
-		button.setIcon(new ImageIcon(header.class.getResource("/Picture/basket.png")));
+		button.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/basket.png")));
 		button.setBounds(537, 3, 83, 59);
 		Head_panel.add(button);
 		
@@ -476,7 +477,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game1.setText(rs.getString("name"));
-	          lbl_Pic1.setIcon(new ImageIcon(header.class.getResource("/Picture/1.jpg")));
+	          lbl_Pic1.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/1.jpg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -487,7 +488,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game2.setText(rs.getString("name"));
-	          lbl_Pic2.setIcon(new ImageIcon(header.class.getResource("/Picture/2.jpg")));
+	          lbl_Pic2.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/2.jpg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -498,7 +499,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game3.setText(rs.getString("name"));
-	          lbl_Pic3.setIcon(new ImageIcon(header.class.getResource("/Picture/3.png")));
+	          lbl_Pic3.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/3.png")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -509,7 +510,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game4.setText(rs.getString("name"));
-	          lbl_Pic4.setIcon(new ImageIcon(header.class.getResource("/Picture/4.jpeg")));
+	          lbl_Pic4.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/4.jpeg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -520,7 +521,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game5.setText(rs.getString("name"));
-	          lbl_Pic5.setIcon(new ImageIcon(header.class.getResource("/Picture/5.png")));
+	          lbl_Pic5.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/5.png")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -531,7 +532,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game6.setText(rs.getString("name"));
-	          lbl_Pic6.setIcon(new ImageIcon(header.class.getResource("/Picture/6.jpeg")));
+	          lbl_Pic6.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/6.jpeg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -542,7 +543,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game7.setText(rs.getString("name"));
-	          lbl_Pic7.setIcon(new ImageIcon(header.class.getResource("/Picture/7.jpg")));
+	          lbl_Pic7.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/7.jpg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -553,7 +554,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game8.setText(rs.getString("name"));
-	          lbl_Pic8.setIcon(new ImageIcon(header.class.getResource("/Picture/8.jpeg")));
+	          lbl_Pic8.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/8.jpeg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -564,7 +565,7 @@ public class MainPage {
 	    try{
 	      if(rs.next()){
 	          lbl_Game9.setText(rs.getString("name"));
-	          lbl_Pic9.setIcon(new ImageIcon(header.class.getResource("/Picture/9.jpg")));
+	          lbl_Pic9.setIcon(new ImageIcon(MainPage.class.getResource("/Picture/9.jpg")));
 	      }  else{
 	          JOptionPane.showMessageDialog(null, "NO DATA FOR THIS ID");
 	      }
@@ -783,8 +784,8 @@ public class MainPage {
 		case"Stardew Valley" : ID = "4";GamePage gamepage3 = new GamePage();gamepage3.setVisible(true);MainPage.setVisible(false);break;
 		case"Monster Hunter World" : ID = "5";GamePage gamepage4 = new GamePage();gamepage4.setVisible(true);MainPage.setVisible(false);break;
 		case"Jump Force" : ID = "6";GamePage gamepage5 = new GamePage();gamepage5.setVisible(true);MainPage.setVisible(false);break;
-		case"Farming Simulator " : ID = "7";GamePage gamepage6 = new GamePage();gamepage6.setVisible(true);MainPage.setVisible(false);break;
-		case"Train Simulator " : ID = "8";GamePage gamepage7 = new GamePage();gamepage7.setVisible(true);MainPage.setVisible(false);break;
+		case"Farming Simulator" : ID = "7";GamePage gamepage6 = new GamePage();gamepage6.setVisible(true);MainPage.setVisible(false);break;
+		case"Train Simulator" : ID = "8";GamePage gamepage7 = new GamePage();gamepage7.setVisible(true);MainPage.setVisible(false);break;
 		case"Hand Simulator" : ID = "9";GamePage gamepage8 = new GamePage();gamepage8.setVisible(true);MainPage.setVisible(false);break;
 		default :
 			JOptionPane.showMessageDialog(null,"No Game Found");

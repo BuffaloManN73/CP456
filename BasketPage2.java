@@ -17,7 +17,7 @@ import javax.swing.JButton;
 
 
 public class BasketPage2 {
-	public class Function{
+	public static class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
 	       PreparedStatement ps = null;
@@ -36,7 +36,21 @@ public class BasketPage2 {
 	        
 	   }
 
-	private JFrame BasketPage;
+	static JFrame BasketPage = new JFrame();
+	static JCheckBox chckbxGame1 = new JCheckBox("Select this");
+	static JCheckBox chckbxGame2 = new JCheckBox("Select this");
+	static JCheckBox chckbxGame3 = new JCheckBox("Select this");
+	static JPanel Game1 = new JPanel();
+	static JPanel Game2 = new JPanel();
+	static JPanel Game3 = new JPanel();
+	static JLabel lblName1 = new JLabel("Name");
+	static JLabel lblName2 = new JLabel("Name");
+	static JLabel lblName3 = new JLabel("Name");
+	static JLabel lblPicture1 = new JLabel("Picture");
+	static JLabel lblPicture2 = new JLabel("Picture");
+	static JLabel lblPicture3 = new JLabel("Picture");
+	
+	
 
 	/**
 	 * Launch the application.
@@ -65,7 +79,7 @@ public class BasketPage2 {
 	 * Initialize the contents of the frame.
 	 */
 	
-	public void refresh()
+	public static void refresh()
 	{
 		BasketPage basketpage = new BasketPage();
 		basketpage.setVisible(true);
@@ -73,29 +87,29 @@ public class BasketPage2 {
 	}
 	
 	private void initialize() {
-		BasketPage = new JFrame();
+
 		BasketPage.setBounds(100, 100, 700, 500);
 		BasketPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		
-		JCheckBox chckbxGame1 = new JCheckBox("Select this");
+
 		chckbxGame1.setBounds(56, 344, 111, 25);
 		chckbxGame1.setVisible(false);
 		BasketPage.getContentPane().setLayout(null);
 		BasketPage.getContentPane().add(chckbxGame1);
 		
-		JCheckBox chckbxGame2 = new JCheckBox("Select this");
+
 		chckbxGame2.setBounds(300, 344, 111, 25);
 		chckbxGame2.setVisible(false);
 		BasketPage.getContentPane().add(chckbxGame2);
 		
-		JCheckBox chckbxGame3 = new JCheckBox("Select this");
+
 		chckbxGame3.setBounds(519, 344, 111, 25);
 		chckbxGame3.setVisible(false);
 		BasketPage.getContentPane().add(chckbxGame3);
 		
 		
-		JPanel Game1 = new JPanel();
+		
 		Game1.setBounds(12, 59, 200, 276);
 		Game1.setVisible(false);
 		BasketPage.getContentPane().add(Game1);
@@ -106,12 +120,12 @@ public class BasketPage2 {
 		lblPicture1.setBounds(22, 13, 150, 200);
 		Game1.add(lblPicture1);
 		
-		JLabel lblName1 = new JLabel("Name");
+		
 		lblName1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblName1.setBounds(22, 238, 150, 25);
 		Game1.add(lblName1);
 		
-		JPanel Game2 = new JPanel();
+		
 		Game2.setBounds(246, 59, 200, 276);
 		Game2.setVisible(false);
 		BasketPage.getContentPane().add(Game2);
@@ -122,23 +136,21 @@ public class BasketPage2 {
 		lblPicture2.setBounds(23, 13, 150, 200);
 		Game2.add(lblPicture2);
 		
-		JLabel lblName2 = new JLabel("Name");
+		
 		lblName2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblName2.setBounds(23, 238, 150, 25);
 		Game2.add(lblName2);
 		
-		JPanel Game3 = new JPanel();
 		Game3.setBounds(470, 59, 200, 276);
 		Game3.setVisible(false);
 		BasketPage.getContentPane().add(Game3);
 		Game3.setLayout(null);
 		
-		JLabel lblPicture3 = new JLabel("Picture");
+
 		lblPicture3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPicture3.setBounds(27, 13, 150, 200);
 		Game3.add(lblPicture3);
 		
-		JLabel lblName3 = new JLabel("Name");
 		lblName3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblName3.setBounds(27, 238, 150, 25);
 		Game3.add(lblName3);

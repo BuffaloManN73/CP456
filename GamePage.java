@@ -59,7 +59,7 @@ public class GamePage{
 	private final JLabel lbl_Score_Detail = new JLabel("score");
 	private final JButton btnBack = new JButton("Back");
 	private final JButton btnAdd = new JButton("Add");
-	private JTextField txt_Search;
+	static JTextField txt_Search = new JTextField();
 
 	/**
 	 * Launch the application.
@@ -142,6 +142,7 @@ public class GamePage{
 	 */
 	private void initialize() {
 		GamePage = new JFrame();
+		GamePage.setTitle("appbuygame");
 		GamePage.setBounds(100, 100, 650, 1000);
 		GamePage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GamePage.getContentPane().setLayout(null);
@@ -153,13 +154,13 @@ public class GamePage{
 		Head_panel.setLayout(null);
 		Head_panel.setOpaque(false);
 		
-		txt_Search = new JTextField();
+		
 		txt_Search.setColumns(10);
 		txt_Search.setBounds(355, 70, 260, 33);
 		Head_panel.add(txt_Search);
 		
 		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon(header.class.getResource("/Picture/logo.png")));
+		lblLogo.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/logo.png")));
 		lblLogo.setBounds(0, 0, 300, 150);
 		Head_panel.add(lblLogo);
 		
@@ -170,7 +171,7 @@ public class GamePage{
 				MainPage.search(txt_Search.getText());
 			}
 		});
-		lblNewLabel.setIcon(new ImageIcon(header.class.getResource("/Picture/search.png")));
+		lblNewLabel.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/search.png")));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(288, 64, 340, 45);
 		Head_panel.add(lblNewLabel);
@@ -185,7 +186,7 @@ public class GamePage{
 				MainPage.MainMenu();
 			}
 		});
-		lbmain.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
+		lbmain.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E19\u0E49\u0E32\u0E2B\u0E25\u0E31\u0E01.png")));
 		lbmain.setBounds(8, 161, 200, 50);
 		Head_panel.add(lbmain);
 		
@@ -199,7 +200,7 @@ public class GamePage{
 				MainPage.HIT();
 			}
 		});
-		lbgamehit.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png")));
+		lbgamehit.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E40\u0E01\u0E21\u0E2E\u0E34\u0E15.png")));
 		lbgamehit.setBounds(218, 161, 200, 50);
 		Head_panel.add(lbgamehit);
 		
@@ -228,7 +229,7 @@ public class GamePage{
 				MainPage.Action();
 			}
 		});
-		lbaction.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
+		lbaction.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21action.png")));
 		lbaction.setBounds(428, 265, 200, 50);
 		lbaction.setVisible(false);
 		Head_panel.add(lbaction);
@@ -243,13 +244,13 @@ public class GamePage{
 				MainPage.Simulation();
 			}
 		});
-		lbsimulation.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
+		lbsimulation.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21simulation.png")));
 		lbsimulation.setBounds(428, 317, 200, 50);
 		lbsimulation.setVisible(false);
 		Head_panel.add(lbsimulation);
 		
 		JLabel lbtype = new JLabel("");
-		lbtype.setIcon(new ImageIcon(header.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
+		lbtype.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/\u0E1B\u0E38\u0E48\u0E21\u0E2B\u0E21\u0E27\u0E14\u0E2B\u0E21\u0E39\u0E48.png")));
 		lbtype.setBounds(428, 161, 200, 50);
 		Head_panel.add(lbtype);
 		
@@ -262,7 +263,7 @@ public class GamePage{
 				GamePage.setVisible(false);
 			}
 		});
-		button.setIcon(new ImageIcon(header.class.getResource("/Picture/basket.png")));
+		button.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/basket.png")));
 		button.setBounds(537, 3, 83, 59);
 		Head_panel.add(button);
 		

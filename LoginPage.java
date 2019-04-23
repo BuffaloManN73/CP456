@@ -25,7 +25,6 @@ public class LoginPage {
 	public static JTextField textFieldusername = new JTextField();
 	public static JTextField textFieldpassword = new JTextField();
 	public static JButton btnLogin = new JButton("");
-	public static int log =0;
 	//public static int frame = 0;
 	/**
 	 * Launch the application.
@@ -81,7 +80,10 @@ public class LoginPage {
 		    	  if(rs.next()){
 			    	  if(textFieldpassword.getText().equals(rs.getString("password"))) {
 			    		  username[0] =  textFieldusername.getText();
-			    		 log = 1;
+			    		  JOptionPane.showMessageDialog(null, "Login Success");	
+			    		  MainPage mainpage = new MainPage();
+							mainpage.setVisible(true);
+							frmLogin.setVisible(false);
 			    	  }else {
 			    		  JOptionPane.showMessageDialog(null, "Wrong Password");
 			    	  }
@@ -153,12 +155,6 @@ public class LoginPage {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				login();
-				if (log == 1) {
-					 JOptionPane.showMessageDialog(null, "Login Success");	
-		    		  MainPage mainpage = new MainPage();
-						mainpage.setVisible(true);
-						frmLogin.setVisible(false);
-				}
 			}
 		});
 		btnLogin.setBounds(75, 382, 233, 59);

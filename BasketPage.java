@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 
 
 public class BasketPage {
-	public class Function{
+	public static class Function{
 	       Connection con = null;
 	       ResultSet rs = null;
 	       PreparedStatement ps = null;
@@ -37,7 +37,7 @@ public class BasketPage {
 	       }
 
 	   }
-	private JFrame BasketPage; 
+	static JFrame BasketPage; 
 
 	/**
 	 * Launch the application.
@@ -65,8 +65,20 @@ public class BasketPage {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	static JCheckBox chckbxGame1 = new JCheckBox("Select this");
+	static JCheckBox chckbxGame2 = new JCheckBox("Select this");
+	static JCheckBox chckbxGame3 = new JCheckBox("Select this");
 	
-	public void refresh()
+	static JPanel Game1 = new JPanel();
+	static JPanel Game2 = new JPanel();
+	static JPanel Game3 = new JPanel();
+	static JLabel lblName1 = new JLabel("Name");
+	static JLabel lblName2 = new JLabel("Name");
+	static JLabel lblName3 = new JLabel("Name");
+	static JLabel lblPicture1 = new JLabel("Picture");
+	static JLabel lblPicture2 = new JLabel("Picture");
+	static JLabel lblPicture3 = new JLabel("Picture");
+	public static void refresh()
 	{
 		BasketPage2 basketpage = new BasketPage2();
 		basketpage.setVisible(true);
@@ -74,22 +86,22 @@ public class BasketPage {
 	}
 	
 	private void initialize() {
-		BasketPage = new JFrame();
+
 		BasketPage.setBounds(100, 100, 700, 500);
 		BasketPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JCheckBox chckbxGame1 = new JCheckBox("Select this");
+		
 		chckbxGame1.setBounds(56, 344, 111, 25);
 		chckbxGame1.setVisible(false);
 		BasketPage.getContentPane().setLayout(null);
 		BasketPage.getContentPane().add(chckbxGame1);
 		
-		JCheckBox chckbxGame2 = new JCheckBox("Select this");
+		
 		chckbxGame2.setBounds(300, 344, 111, 25);
 		chckbxGame2.setVisible(false);
 		BasketPage.getContentPane().add(chckbxGame2);
 		
-		JCheckBox chckbxGame3 = new JCheckBox("Select this");
+		
 		chckbxGame3.setBounds(519, 344, 111, 25);
 		chckbxGame3.setVisible(false);
 		BasketPage.getContentPane().add(chckbxGame3);

@@ -90,7 +90,11 @@ public class RegisterPage {
 				pst.setString(4, textFielphone.getText());
 				
 				pst.execute();
-				reg = 1;
+
+				JOptionPane.showMessageDialog(null, "Register Success");
+				LoginPage logpage = new LoginPage();
+				logpage.setVisible(true);
+				frmAppbuysteam.setVisible(false);
 			}
 			//rs = pst.executeQuery();
 
@@ -186,13 +190,6 @@ public class RegisterPage {
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				register();
-			if (reg ==1) {
-				JOptionPane.showMessageDialog(null, "Register Success");
-				LoginPage logpage = new LoginPage();
-				logpage.setVisible(true);
-				frmAppbuysteam.setVisible(false);
-				}
-			reg = 0;
 			}
 		});
 		btnConfirm.setOpaque(false);
