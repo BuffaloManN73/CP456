@@ -386,31 +386,31 @@ public class GamePage{
 	            }
 	    switch(MainPage.ID) {
         case "1" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/1.jpg")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/1.jpg")));
            break;
         case "2" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/2.jpg")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/2.jpg")));
            break;
         case "3" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/3.png")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/3.png")));
            break;
         case "4" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/4.jpeg")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/4.jpeg")));
            break;
         case "5" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/5.png")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/5.png")));
            break;
         case "6" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/6.jpeg")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/6.jpeg")));
            break;
         case "7" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/7.jpg")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/7.jpg")));
            break;
         case "8" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/8.jpeg")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/8.jpeg")));
            break;
         case "9" :
-       	 lbl_Picture.setIcon(new ImageIcon(TestBasket.class.getResource("/Picture/9.jpg")));
+       	 lbl_Picture.setIcon(new ImageIcon(GamePage.class.getResource("/Picture/9.jpg")));
            break;
 	    }
 	    lbl_Picture.setText(null);

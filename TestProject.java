@@ -47,6 +47,7 @@ class TestProject {
 		
 		//LoginPage.btnLogin.doClick();
 		assertEquals(true,LoginPage.frmLogin.isVisible());
+		
 	}
 	/*
 	void testLoginPageform() {
