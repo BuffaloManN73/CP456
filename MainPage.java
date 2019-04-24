@@ -67,7 +67,8 @@ public class MainPage {
 	 * Initialize the contents of the frame.
 	 */
 	static String ID;
-	
+	static JPanel Head_panel = new JPanel();
+	static JPanel Main_panel = new JPanel();
 	static JLabel lbl_Pic1 = new JLabel("GamePic1");
 	static JLabel lbl_Pic2 = new JLabel("GamePic2");
 	static JLabel lbl_Pic3 = new JLabel("GamePic3");
@@ -88,7 +89,7 @@ public class MainPage {
 	static JLabel lbl_Game8 = new JLabel("Game8");
 	static JLabel lbl_Game9 = new JLabel("Game9");
 	static JTextField txt_Search = new JTextField();
-	static JPanel Head_panel = new JPanel();
+	
 	
 	public void initialize() {
 		MainPage.setTitle("appbuygame");
@@ -214,7 +215,7 @@ public class MainPage {
 		MainPage.getContentPane().add(scrollPane);
 		scrollPane.setPreferredSize(new Dimension(600,700));
 		
-		JPanel Main_panel = new JPanel();
+		
 		scrollPane.setViewportView(Main_panel);
 		Main_panel.setLayout(null);
 		Main_panel.setPreferredSize(new Dimension(600,1000));

@@ -86,7 +86,7 @@ public class BasketPage {
 	}
 	
 	private void initialize() {
-		JFrame BasketPage = new JFrame();
+		
 		BasketPage.setBounds(100, 100, 700, 500);
 		BasketPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
